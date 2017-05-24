@@ -1,5 +1,7 @@
 swarm-constants
 ===============
+**In development. Not ready for production use**
+
 This project contains cross-platform "design constants" for the 
 [Swarm Design System](https://github.com/meetup/swarm-design-system), generated 
 using [`style-dictionary`](https://github.com/amzn/style-dictionary);
@@ -23,3 +25,8 @@ Command              | Result
 -------------------- | -----------------------------
 `yarn run build`     | Compiles distributions
 
+
+### Known issues
+- colors converted to RGB hex in Sass
+- alpha channels not preserved in output
+	- needs `transform` updates in config
