@@ -7,7 +7,7 @@ This project contains cross-platform "design constants" for the
 using [`style-dictionary`](https://github.com/amzn/style-dictionary);
 
 ### Usage
-Edit `JSON` values in `properties/`. Please use the 
+Edit `json` files in `properties/`. Please use the 
 ["Category/Type/Item" convention](https://github.com/amzn/style-dictionary/blob/master/docs/property_structure.md#category--type--item) 
 for object structure.
 
@@ -16,7 +16,7 @@ To regenerate distributions, use command `yarn run build`.
 
 #### Adding distributions
 The `style-dictionary` library uses a [`config.json`](https://github.com/amzn/style-dictionary#configjson) 
-to configure distributions. You can use one of the [`built in formats`](https://github.com/amzn/style-dictionary/blob/master/docs/formats_and_templates.md#built-in-formats)
+file to configure distributions. You can use one of the [`built in formats`](https://github.com/amzn/style-dictionary/blob/master/docs/formats_and_templates.md#built-in-formats)
 provided by `style-dictionary`, or you can register your own format.
 
 ### Scripts
