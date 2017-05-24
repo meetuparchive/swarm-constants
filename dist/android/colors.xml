@@ -2,12 +2,10 @@
 
 <!--
   Do not edit directly
-  Generated on Tue May 23 2017 23:13:31 GMT-0400 (EDT)
+  Generated on Wed May 24 2017 18:34:35 GMT-0400 (EDT)
 -->
 <resources>
-  <color name="color_base_white">#FFFFFF</color>
-  <color name="color_base_dark_gray">#353E48</color>
-  <color name="color_base_medium_gray">#757575</color>
-  <color name="color_base_light_gray">#FAFAFA</color>
+  <color name="color_base_white">#ffffffff</color>
+  <color name="color_base_border">#1f000000</color>
   
 </resources>
