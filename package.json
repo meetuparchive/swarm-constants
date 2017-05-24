@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "UI Constants for Meetup's Swarm Design System",
   "scripts": {
-	  "build": "style-dictionary build"
+    "build": "node config/build.js"
   },
   "author": "adamd@meetup.com",
   "license": "MIT",

@@ -1,6 +1,6 @@
-import StyleDictionary from 'style-dictionary';
+const StyleDictionary = require('style-dictionary');
 
-const styleDictionary = StyleDictionary.extend('config.json');
+const styleDictionary = StyleDictionary.extend('config/config.json');
 
 styleDictionary.registerTransform({
 	name: 'color/rgba',
