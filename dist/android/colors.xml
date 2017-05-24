@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly
+  Generated on Tue May 23 2017 23:13:31 GMT-0400 (EDT)
+-->
+<resources>
+  <color name="color_base_white">#FFFFFF</color>
+  <color name="color_base_dark_gray">#353E48</color>
+  <color name="color_base_medium_gray">#757575</color>
+  <color name="color_base_light_gray">#FAFAFA</color>
+  
+</resources>
