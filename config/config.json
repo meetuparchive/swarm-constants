@@ -1,9 +1,13 @@
 {
-  "source": ["properties/color/*.json"],
+  "source": ["../properties/color/*.json"],
   "platforms": {
     "scss": {
-      "transformGroup": "scss",
-      "buildPath": "dist/",
+      "transforms": [
+			'attribute/cti',
+			'name/cti/camel',
+			'color/rgba'
+		],
+      "buildPath": "../dist/",
       "files": [
 			{
 			  "destination": "scss/_colors.scss",
@@ -13,7 +17,7 @@
     },
     "android": {
       "transformGroup": "android",
-      "buildPath": "dist/",
+      "buildPath": "../dist/",
       "files": [
 			{
 			  "destination": "android/colors.xml",
