@@ -1,0 +1,12 @@
+{
+	"color": {
+
+		"base": {
+			"white": { "value": "rgb(255,255,255)" },
+			"darkGray": { "value": "rgb(53,62,72)" },
+			"mediumGray": { "value": "rgb(117,117,117)" },
+			"lightGray": { "value": "rgb(250,250,250)" }
+		}
+
+	}
+}

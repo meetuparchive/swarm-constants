@@ -1,0 +1,13 @@
+{
+  "name": "swarm-constants",
+  "version": "0.0.1",
+  "description": "UI Constants for Meetup's Swarm Design System",
+  "scripts": {
+	  "build": "style-dictionary build"
+  },
+  "author": "adamd@meetup.com",
+  "license": "MIT",
+  "devDependencies": {
+    "style-dictionary": "^2.0.0-beta"
+  }
+}
