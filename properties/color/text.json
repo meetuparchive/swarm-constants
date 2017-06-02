@@ -2,34 +2,34 @@
 	"color": {
 		"text": {
 
-			"textPrimary": {
+			"primary": {
 				"value": [0, 0, 0, 0.87]
 			},
-			"textSecondary": {
+			"secondary": {
 				"value": [0, 0, 0, 0.54]
 			},
-			"textTertiary": {
+			"tertiary": {
 				"value": [0, 0, 0, 0.26]
 			},
-			"textHint": {
+			"hint": {
 				"value": [0, 0, 0, 0.26]
 			},
-			"textDisabled": {
+			"disabled": {
 				"value": [0, 0, 0, 0.12]
 			},
-			"textPrimaryInverted": {
+			"primaryInverted": {
 				"value": [255, 255, 255, 1]
 			},
-			"textSecondaryInverted": {
+			"secondaryInverted": {
 				"value": [255, 255, 255, 0.70]
 			},
-			"textTertiaryInverted": {
+			"tertiaryInverted": {
 				"value": [255, 255, 255, 0.30]
 			},
-			"textHintInverted": {
+			"hintInverted": {
 				"value": [255, 255, 255, 0.30]
 			},
-			"textDisabledInverted": {
+			"disabledInverted": {
 				"value": [255, 255, 255, 0.12]
 			}
 
