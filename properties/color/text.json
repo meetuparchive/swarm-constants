@@ -1,0 +1,38 @@
+{
+	"color": {
+		"text": {
+
+			"textPrimary": {
+				"value": [0, 0, 0, 0.87]
+			},
+			"textSecondary": {
+				"value": [0, 0, 0, 0.54]
+			},
+			"textTertiary": {
+				"value": [0, 0, 0, 0.26]
+			},
+			"textHint": {
+				"value": [0, 0, 0, 0.26]
+			},
+			"textDisabled": {
+				"value": [0, 0, 0, 0.12]
+			},
+			"textPrimaryInverted": {
+				"value": [255, 255, 255, 1]
+			},
+			"textSecondaryInverted": {
+				"value": [255, 255, 255, 0.70]
+			},
+			"textTertiaryInverted": {
+				"value": [255, 255, 255, 0.30]
+			},
+			"textHintInverted": {
+				"value": [255, 255, 255, 0.30]
+			},
+			"textDisabledInverted": {
+				"value": [255, 255, 255, 0.12]
+			}
+
+		}
+	}
+}

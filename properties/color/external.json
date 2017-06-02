@@ -1,0 +1,47 @@
+{
+	"color": {
+		"external": {
+
+			"facebook": {
+				"value": [59, 89, 152, 1]
+			},
+			"twitter": {
+				"value": [51, 204, 255, 1]
+			},
+			"linkedin": {
+				"value": [72, 117, 180, 1]
+			},
+			"tumblr": {
+				"value": [43, 73, 100, 1]
+			},
+			"flickr": {
+				"value": [254, 8, 131, 1]
+			},
+			"foursquare": {
+				"value": [12, 186, 223, 1]
+			},
+			"googleplus": {
+				"value": [198, 61, 45, 1]
+			},
+			"googleplusbutton": {
+				"value": [255, 255, 255, 1]
+			},
+			"instagram": {
+				"value": [78, 67, 60, 1]
+			},
+			"reddit": {
+				"value": [206, 227, 248, 1]
+			},
+			"wepay": {
+				"value": [72, 145, 220, 1]
+			},
+			"yahoo": {
+				"value": [123, 0, 153, 1]
+			},
+			"outlook": {
+				"value": [0, 114, 198, 1]
+			}
+
+		}
+	}
+}

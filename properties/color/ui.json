@@ -1,0 +1,47 @@
+{
+	"color": {
+		"ui": {
+
+			"border": {
+				"value": [0, 0, 0, 0.12]
+			},
+			"borderDark": {
+				"value": [0, 0, 0, 0.54]
+			},
+			"borderInverted": {
+				"value": [255, 255, 255, 0.2]
+			},
+			"borderDarkInverted": {
+				"value": [255, 255, 255, 0.7]
+			},
+			"separator": {
+				"value": [0, 0, 0, 0.26]
+			},
+			"highlight": {
+				"value": [0, 0, 255, 0.05]
+			},
+			"selection": {
+				"value": [0, 0, 0, 0.05]
+			},
+			"dimmingOverlay": {
+				"value": [0, 0, 0, 0.4]
+			},
+			"tappable": {
+				"value": [56, 56, 15, 0.09]
+			},
+			"tappableInverted": {
+				"value": [255, 246, 196, 0.27]
+			},
+			"contentBG": {
+				"value": [255, 255, 255, 1]
+			},
+			"contentBGInverted": {
+				"value": [15, 23, 33, 1]
+			},
+			"collectionBG": {
+				"value": [250, 250, 250, 1]
+			}
+
+		}
+	}
+}
