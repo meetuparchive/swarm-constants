@@ -1,5 +1,6 @@
 const StyleDictionary = require('style-dictionary').extend('./config.json');
 const Color = require('tinycolor2');
+const _ = require('lodash');
 
 /**
  * @param {Array} arr - the rgba array to convert
@@ -38,6 +39,13 @@ StyleDictionary.registerTransform({
 
 		return `#${str.slice(6)}${str.slice(0,6)}`;
 	}
+});
+
+StyleDictionary.registerTransform({
+	name: 'name/cti/prefixC',
+	type: 'name',
+	matcher: prop => prop.attributes.category === 'color',
+	transformer: (prop, options) => `C_${prop.path.pop()}`
 });
 
 StyleDictionary.buildAllPlatforms();

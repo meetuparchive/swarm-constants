@@ -8,9 +8,8 @@
   "author": "adamd@meetup.com",
   "license": "MIT",
   "devDependencies": {
-    "style-dictionary": "^2.0.0-beta"
-  },
-  "dependencies": {
+    "lodash": "^4.17.4",
+    "style-dictionary": "^2.0.0-beta",
     "tinycolor2": "^1.4.1"
   }
 }
