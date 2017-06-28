@@ -3,12 +3,11 @@
   "version": "0.0.1",
   "description": "UI Constants for Meetup's Swarm Design System",
   "scripts": {
-    "build": "node build.js"
+    "build": "node scripts/build.js"
   },
   "author": "adamd@meetup.com",
   "license": "MIT",
   "devDependencies": {
-    "lodash": "^4.17.4",
     "style-dictionary": "^2.0.0-beta",
     "tinycolor2": "^1.4.1"
   }
