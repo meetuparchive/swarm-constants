@@ -9,7 +9,7 @@ using [`style-dictionary`](https://github.com/amzn/style-dictionary);
 ### Usage
 Edit `json` files in `properties/`. Please use the 
 ["Category/Type/Item" convention](https://github.com/amzn/style-dictionary/blob/master/docs/property_structure.md#category--type--item) 
-for object structure.
+for object structure. Colors should be expressed as an rgba array, `[R,G,B,A]`.
 
 We commit our distributions to make it easier for consumers to import design constants. 
 To regenerate distributions, use command `yarn run build`.
