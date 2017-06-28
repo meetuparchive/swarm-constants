@@ -10,11 +10,16 @@ const helpers = require('./util/handlebarsHelpers');
  * to build type-specific docs.
  *
  * Usage:
- * `node staticDoc '<src dir path>' '<dest dir path>'`
+ * `node colorDoc`
  */
 
-const SRC_DIR = process.argv[2];
-const DEST_DIR = process.argv[3];
+const SRC_DIR = '../properties/color/';
+const DEST_DIR = 'dist/doc/color/';
+const templatePath = '../templates/color/index.hbs';
+
+const template = Handlebars.compile(
+		fs.readFileSync(templatePath, 'utf8')
+	);
 
 // template context
 const context = {
@@ -45,7 +50,7 @@ const getColorList = colors => {
  * @returns {Object} native object representing a category of properties
  */
 const getColorCategory = f => {
-	const catJSON = fs.readFileSync(`${SRC_DIR}/${f}`);
+	const catJSON = fs.readFileSync(`${SRC_DIR}/${f}`, 'utf8');
 	const catObj = JSON.parse(catJSON).color;
 	const catName = Object.keys(catObj)[0];
 	const catColors = catObj[catName];
