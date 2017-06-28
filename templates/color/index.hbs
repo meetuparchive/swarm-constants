@@ -52,28 +52,15 @@
 </head>
 <body>
 	<div class="bounds column" style="height: 100vh;">
-		{{#each colors}}
-			<section
-				class="stripe column-item colorSection {{getInvertedClass color}}"
-				style="background-color: {{toRgba color}}"
-			>
-				<div class="row">
-					<div class="row-item">
-						<h1 class="text--display2">{{name}}</h1>
-					</div>
-					<div class="row-item row-item--shrink">
-						<dl class="colorValue">
-							<dt>HEX</dt>
-								<dd>{{toHex color}}</dd>
-						</dl>
-						<dl class="colorValue">
-							<dt>RGBA</dt>
-								<dd>{{color.R}}, {{color.G}}, {{color.B}}, {{color.A}}</dd>
-						</dl>
-					</div>
-				</div>
-			</section>
+
+		{{#each category}}
+			<h1 class="text--big chunk">{{name}}</h1>
+			{{#each colors}}
+				<p>{{name}}</p>
+				<p class="text-secondary">{{value}}</p>
+			{{/each}}
 		{{/each}}
+
 	</div>
 </body>
 </html>

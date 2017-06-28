@@ -1,5 +1,5 @@
 const Color = require('tinycolor2');
-const getRgbaString = require('../getRgbaString');
+const getRgbaString = require('./getRgbaString');
 
 
 const getInvertedClass = {
@@ -13,7 +13,7 @@ const getInvertedClass = {
 		 Color(getRgbaString(colorArr))
 			.isDark() ?
 				'inverted'
-				: '';
+				: ''
 };
 
 const toHex = {
@@ -24,7 +24,12 @@ const toHex = {
 	 * @returns {String} hex6 color string
 	 */
 	helperFn: colorArr =>
-		getRgbaString(colorArr);
+		Color(getRgbaString(colorArr)).toHexString()
+};
+
+const toRgba = {
+	helperName: 'toRgba',
+	helperFn: getRgbaString
 };
 
 
