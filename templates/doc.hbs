@@ -55,7 +55,7 @@
 		{{#each colors}}
 			<section
 				class="stripe column-item colorSection {{getInvertedClass color}}"
-				style="background-color: {{rgba color}}"
+				style="background-color: {{toRgba color}}"
 			>
 				<div class="row">
 					<div class="row-item">
@@ -64,7 +64,7 @@
 					<div class="row-item row-item--shrink">
 						<dl class="colorValue">
 							<dt>HEX</dt>
-								<dd>{{hex color}}</dd>
+								<dd>{{toHex color}}</dd>
 						</dl>
 						<dl class="colorValue">
 							<dt>RGBA</dt>
