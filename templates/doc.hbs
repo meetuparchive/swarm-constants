@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>swarm-constants</title>
+	<link rel="stylesheet" href="http://static2.meetupstatic.com/fonts/graphik.css">
+	<link rel="stylesheet" type="text/css" href="http://meetup.github.io/sassquatch2/bundle/sassquatch.css" />
+	<style type="text/css">
+		.colorSection {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.colorValue {
+			cursor: pointer;
+		}
+		.colorValue dt,
+		.colorValue dd {
+			display: inline-block;
+			padding: 8px;
+		}
+		.colorValue dt {
+			margin-right: 16px;
+			font-weight: bold;
+		}
+		.colorValue:hover {
+			background: rgba(255,255,255,0.5);
+		}
+		.colorValue:active {
+			background: rgba(255,230,0,0.7);
+		}
+	</style>
+	<style type="text/css">
+		body {
+			font-family: Monaco, Consolas, monospace;
+		}
+		.colorSection {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.colorValue dt,
+		.colorValue dd {
+			display: inline-block;
+			padding: 8px;
+		}
+		.colorValue dt {
+			margin-right: 16px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="bounds column" style="height: 100vh;">
+		{{#each colors}}
+			<section
+				class="stripe column-item colorSection {{getInvertedClass color}}"
+				style="background-color: {{rgba color}}"
+			>
+				<div class="row">
+					<div class="row-item">
+						<h1 class="text--display2">{{name}}</h1>
+					</div>
+					<div class="row-item row-item--shrink">
+						<dl class="colorValue">
+							<dt>HEX</dt>
+								<dd>{{hex color}}</dd>
+						</dl>
+						<dl class="colorValue">
+							<dt>RGBA</dt>
+								<dd>{{color.R}}, {{color.G}}, {{color.B}}, {{color.A}}</dd>
+						</dl>
+					</div>
+				</div>
+			</section>
+		{{/each}}
+	</div>
+</body>
+</html>
