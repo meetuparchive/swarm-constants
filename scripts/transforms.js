@@ -1,18 +1,17 @@
-const StyleDictionary = require('style-dictionary').extend('./config.json');
 const Color = require('tinycolor2');
-const _ = require('lodash');
+const getRgbaString = require('./util/getRgbaString');
 
 /**
- * @param {Array} arr - the rgba array to convert
- * @returns {String} valid css rgba string
+ * StyleDictionary custom transforms
+ * https://amzn.github.io/style-dictionary/transforms
  */
-const getRgbaString = arr => {
-	return `rgba(${arr[0]},${arr[1]},${arr[2]},${arr[3]})`;
-};
 
-//// rgba(r,g,b,a) for transparent colors
-//// rgb(r,g,b) for solid colors
-StyleDictionary.registerTransform({
+
+//
+// Color transform
+// converts color to optimized rgb/rgba
+//
+const optimizedRGBA = {
 	name: 'color/optimizedRGBA',
 	type: 'value',
 	matcher: prop => prop.attributes.category === 'color',
@@ -25,10 +24,14 @@ StyleDictionary.registerTransform({
 			return `rgb(${arr[0]},${arr[1]},${arr[2]})`;
 		}
 	}
-});
+};
 
-//// #aarrggbb
-StyleDictionary.registerTransform({
+
+//
+// Color transform
+// converts color to android AARRGGBB hex
+//
+const androidHex8 = {
 	name: 'color/androidHex8',
 	type: 'value',
 	matcher: prop => prop.attributes.category === 'color',
@@ -39,13 +42,23 @@ StyleDictionary.registerTransform({
 
 		return `#${str.slice(6)}${str.slice(0,6)}`;
 	}
-});
+};
 
-StyleDictionary.registerTransform({
+
+//
+// Name transform
+// converts "cti" object structure to sass `$C_[colorName]`
+//
+const prefixC = {
 	name: 'name/cti/prefixC',
 	type: 'name',
 	matcher: prop => prop.attributes.category === 'color',
 	transformer: (prop, options) => `C_${prop.path.pop()}`
-});
+};
 
-StyleDictionary.buildAllPlatforms();
+
+module.exports = [
+	optimizedRGBA,
+	androidHex8,
+	prefixC,
+];
