@@ -1,5 +1,6 @@
 const StyleDictionary = require('style-dictionary').extend('./config.json');
 const TRANSFORMS = require('./transforms');
+const buildStaticDocs = require('./staticDoc').build;
 
 TRANSFORMS
 	.forEach((t) => {
@@ -9,3 +10,6 @@ TRANSFORMS
 
 console.info('--------------------------\nBuilding distributions...');
 StyleDictionary.buildAllPlatforms();
+
+console.info('--------------------------\nBuilding static docs...');
+buildStaticDocs();
