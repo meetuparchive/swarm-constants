@@ -15,21 +15,13 @@
 		}
 		.colorValue {
 			cursor: pointer;
-		}
-		.colorValue dt,
-		.colorValue dd {
-			display: inline-block;
-			padding: 8px;
-		}
-		.colorValue dt {
-			margin-right: 16px;
-			font-weight: bold;
+			padding: 6px 12px;
 		}
 		.colorValue:hover {
 			background: rgba(255,255,255,0.5);
 		}
 		.colorValue:active {
-			background: rgba(255,230,0,0.7);
+			background: rgba(255,255,255,0.33);
 		}
 
 		.checkerBg {
@@ -38,217 +30,1405 @@
 	</style>
 </head>
 <body>
-	<div class="bounds column checkerBg" style="min-height: 100vh;">
+	<div class="column" style="min-height: 100vh;">
 
-			<h1 class="text--big chunk">base</h1>
-				<div class="" style="background-color: rgba(255,255,255,1)">
-					<p>white</p>
-					<p class="text-secondary">255,255,255,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(117,117,117,1)">
-					<p>mediumGray</p>
-					<p class="text-secondary">117,117,117,1</p>
-				</div>
-				<div class="" style="background-color: rgba(250,250,250,1)">
-					<p>lightGray</p>
-					<p class="text-secondary">250,250,250,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(241,58,89,1)">
-					<p>red</p>
-					<p class="text-secondary">241,58,89,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(211,45,74,1)">
-					<p>darkRed</p>
-					<p class="text-secondary">211,45,74,1</p>
-				</div>
-				<div class="" style="background-color: rgba(255,153,209,1)">
-					<p>pink</p>
-					<p class="text-secondary">255,153,209,1</p>
-				</div>
-				<div class="" style="background-color: rgba(255,229,51,1)">
-					<p>yellow</p>
-					<p class="text-secondary">255,229,51,1</p>
-				</div>
-				<div class="" style="background-color: rgba(77,209,237,1)">
-					<p>lightBlue</p>
-					<p class="text-secondary">77,209,237,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(55,30,172,1)">
-					<p>purple</p>
-					<p class="text-secondary">55,30,172,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(63,87,239,1)">
-					<p>blue</p>
-					<p class="text-secondary">63,87,239,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(112,0,176,1)">
-					<p>plum</p>
-					<p class="text-secondary">112,0,176,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(233,104,0,1)">
-					<p>orange</p>
-					<p class="text-secondary">233,104,0,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(15,217,163,1)">
-					<p>teal</p>
-					<p class="text-secondary">15,217,163,1</p>
-				</div>
-				<div class="" style="background-color: rgba(89,219,51,1)">
-					<p>shamrock</p>
-					<p class="text-secondary">89,219,51,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(15,23,33,1)">
-					<p>black</p>
-					<p class="text-secondary">15,23,33,1</p>
-				</div>
-			<h1 class="text--big chunk">external</h1>
-				<div class="inverted" style="background-color: rgba(59,89,152,1)">
-					<p>facebook</p>
-					<p class="text-secondary">59,89,152,1</p>
-				</div>
-				<div class="" style="background-color: rgba(51,204,255,1)">
-					<p>twitter</p>
-					<p class="text-secondary">51,204,255,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(72,117,180,1)">
-					<p>linkedin</p>
-					<p class="text-secondary">72,117,180,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(43,73,100,1)">
-					<p>tumblr</p>
-					<p class="text-secondary">43,73,100,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(254,8,131,1)">
-					<p>flickr</p>
-					<p class="text-secondary">254,8,131,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(12,186,223,1)">
-					<p>foursquare</p>
-					<p class="text-secondary">12,186,223,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(198,61,45,1)">
-					<p>googleplus</p>
-					<p class="text-secondary">198,61,45,1</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,1)">
-					<p>googleplusbutton</p>
-					<p class="text-secondary">255,255,255,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(78,67,60,1)">
-					<p>instagram</p>
-					<p class="text-secondary">78,67,60,1</p>
-				</div>
-				<div class="" style="background-color: rgba(206,227,248,1)">
-					<p>reddit</p>
-					<p class="text-secondary">206,227,248,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(72,145,220,1)">
-					<p>wepay</p>
-					<p class="text-secondary">72,145,220,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(123,0,153,1)">
-					<p>yahoo</p>
-					<p class="text-secondary">123,0,153,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,114,198,1)">
-					<p>outlook</p>
-					<p class="text-secondary">0,114,198,1</p>
-				</div>
-			<h1 class="text--big chunk">text</h1>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.87)">
-					<p>primary</p>
-					<p class="text-secondary">0,0,0,0.87</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.54)">
-					<p>secondary</p>
-					<p class="text-secondary">0,0,0,0.54</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.26)">
-					<p>tertiary</p>
-					<p class="text-secondary">0,0,0,0.26</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.26)">
-					<p>hint</p>
-					<p class="text-secondary">0,0,0,0.26</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.12)">
-					<p>disabled</p>
-					<p class="text-secondary">0,0,0,0.12</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,1)">
-					<p>primaryInverted</p>
-					<p class="text-secondary">255,255,255,1</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,0.7)">
-					<p>secondaryInverted</p>
-					<p class="text-secondary">255,255,255,0.7</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,0.3)">
-					<p>tertiaryInverted</p>
-					<p class="text-secondary">255,255,255,0.3</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,0.3)">
-					<p>hintInverted</p>
-					<p class="text-secondary">255,255,255,0.3</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,0.12)">
-					<p>disabledInverted</p>
-					<p class="text-secondary">255,255,255,0.12</p>
-				</div>
-			<h1 class="text--big chunk">ui</h1>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.12)">
-					<p>border</p>
-					<p class="text-secondary">0,0,0,0.12</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.54)">
-					<p>borderDark</p>
-					<p class="text-secondary">0,0,0,0.54</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,0.2)">
-					<p>borderInverted</p>
-					<p class="text-secondary">255,255,255,0.2</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,0.7)">
-					<p>borderDarkInverted</p>
-					<p class="text-secondary">255,255,255,0.7</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.26)">
-					<p>separator</p>
-					<p class="text-secondary">0,0,0,0.26</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,255,0.05)">
-					<p>highlight</p>
-					<p class="text-secondary">0,0,255,0.05</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.05)">
-					<p>selection</p>
-					<p class="text-secondary">0,0,0,0.05</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(0,0,0,0.4)">
-					<p>dimmingOverlay</p>
-					<p class="text-secondary">0,0,0,0.4</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(56,56,15,0.09)">
-					<p>tappable</p>
-					<p class="text-secondary">56,56,15,0.09</p>
-				</div>
-				<div class="" style="background-color: rgba(255,246,196,0.27)">
-					<p>tappableInverted</p>
-					<p class="text-secondary">255,246,196,0.27</p>
-				</div>
-				<div class="" style="background-color: rgba(255,255,255,1)">
-					<p>contentBG</p>
-					<p class="text-secondary">255,255,255,1</p>
-				</div>
-				<div class="inverted" style="background-color: rgba(15,23,33,1)">
-					<p>contentBGInverted</p>
-					<p class="text-secondary">15,23,33,1</p>
-				</div>
-				<div class="" style="background-color: rgba(250,250,250,1)">
-					<p>collectionBG</p>
-					<p class="text-secondary">250,250,250,1</p>
-				</div>
+			<section class="bounds margin--top padding--top">
+				<h1 class="text--display2 chunk">base</h1>
+			</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(255,255,255);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">white</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#white_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="white_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#white_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="white_rgba">rgb(255,255,255)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(117,117,117);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">mediumGray</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#mediumGray_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="mediumGray_hex">#757575</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#mediumGray_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="mediumGray_rgba">rgb(117,117,117)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(250,250,250);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">lightGray</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#lightGray_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="lightGray_hex">#fafafa</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#lightGray_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="lightGray_rgba">rgb(250,250,250)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(241,58,89);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">red</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#red_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="red_hex">#f13a59</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#red_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="red_rgba">rgb(241,58,89)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(211,45,74);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">darkRed</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#darkRed_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="darkRed_hex">#d32d4a</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#darkRed_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="darkRed_rgba">rgb(211,45,74)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(255,153,209);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">pink</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#pink_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="pink_hex">#ff99d1</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#pink_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="pink_rgba">rgb(255,153,209)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(255,229,51);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">yellow</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#yellow_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="yellow_hex">#ffe533</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#yellow_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="yellow_rgba">rgb(255,229,51)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(77,209,237);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">lightBlue</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#lightBlue_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="lightBlue_hex">#4dd1ed</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#lightBlue_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="lightBlue_rgba">rgb(77,209,237)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(55,30,172);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">purple</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#purple_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="purple_hex">#371eac</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#purple_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="purple_rgba">rgb(55,30,172)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(63,87,239);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">blue</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#blue_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="blue_hex">#3f57ef</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#blue_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="blue_rgba">rgb(63,87,239)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(112,0,176);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">plum</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#plum_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="plum_hex">#7000b0</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#plum_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="plum_rgba">rgb(112,0,176)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(233,104,0);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">orange</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#orange_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="orange_hex">#e96800</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#orange_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="orange_rgba">rgb(233,104,0)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(15,217,163);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">teal</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#teal_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="teal_hex">#0fd9a3</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#teal_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="teal_rgba">rgb(15,217,163)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(89,219,51);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">shamrock</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#shamrock_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="shamrock_hex">#59db33</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#shamrock_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="shamrock_rgba">rgb(89,219,51)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(15,23,33);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">black</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#black_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="black_hex">#0f1721</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#black_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="black_rgba">rgb(15,23,33)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+			<section class="bounds margin--top padding--top">
+				<h1 class="text--display2 chunk">external</h1>
+			</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(59,89,152);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">facebook</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#facebook_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="facebook_hex">#3b5998</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#facebook_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="facebook_rgba">rgb(59,89,152)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(51,204,255);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">twitter</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#twitter_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="twitter_hex">#33ccff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#twitter_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="twitter_rgba">rgb(51,204,255)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(72,117,180);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">linkedin</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#linkedin_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="linkedin_hex">#4875b4</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#linkedin_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="linkedin_rgba">rgb(72,117,180)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(43,73,100);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">tumblr</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tumblr_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="tumblr_hex">#2b4964</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tumblr_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="tumblr_rgba">rgb(43,73,100)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(254,8,131);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">flickr</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#flickr_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="flickr_hex">#fe0883</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#flickr_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="flickr_rgba">rgb(254,8,131)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(12,186,223);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">foursquare</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#foursquare_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="foursquare_hex">#0cbadf</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#foursquare_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="foursquare_rgba">rgb(12,186,223)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(198,61,45);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">googleplus</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#googleplus_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="googleplus_hex">#c63d2d</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#googleplus_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="googleplus_rgba">rgb(198,61,45)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(255,255,255);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">googleplusbutton</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#googleplusbutton_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="googleplusbutton_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#googleplusbutton_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="googleplusbutton_rgba">rgb(255,255,255)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(78,67,60);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">instagram</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#instagram_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="instagram_hex">#4e433c</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#instagram_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="instagram_rgba">rgb(78,67,60)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(206,227,248);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">reddit</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#reddit_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="reddit_hex">#cee3f8</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#reddit_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="reddit_rgba">rgb(206,227,248)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(72,145,220);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">wepay</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#wepay_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="wepay_hex">#4891dc</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#wepay_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="wepay_rgba">rgb(72,145,220)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(123,0,153);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">yahoo</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#yahoo_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="yahoo_hex">#7b0099</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#yahoo_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="yahoo_rgba">rgb(123,0,153)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(0,114,198);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">outlook</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#outlook_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="outlook_hex">#0072c6</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#outlook_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="outlook_rgba">rgb(0,114,198)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+			<section class="bounds margin--top padding--top">
+				<h1 class="text--display2 chunk">text</h1>
+			</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgba(0,0,0,0.87);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">primary</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#primary_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="primary_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#primary_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="primary_rgba">rgba(0,0,0,0.87)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgba(0,0,0,0.54);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">secondary</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#secondary_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="secondary_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#secondary_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="secondary_rgba">rgba(0,0,0,0.54)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(0,0,0,0.26);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">tertiary</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tertiary_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="tertiary_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tertiary_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="tertiary_rgba">rgba(0,0,0,0.26)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(0,0,0,0.26);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">hint</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#hint_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="hint_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#hint_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="hint_rgba">rgba(0,0,0,0.26)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(0,0,0,0.12);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">disabled</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#disabled_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="disabled_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#disabled_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="disabled_rgba">rgba(0,0,0,0.12)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(255,255,255);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">primaryInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#primaryInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="primaryInverted_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#primaryInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="primaryInverted_rgba">rgb(255,255,255)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(255,255,255,0.7);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">secondaryInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#secondaryInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="secondaryInverted_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#secondaryInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="secondaryInverted_rgba">rgba(255,255,255,0.7)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(255,255,255,0.3);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">tertiaryInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tertiaryInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="tertiaryInverted_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tertiaryInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="tertiaryInverted_rgba">rgba(255,255,255,0.3)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(255,255,255,0.3);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">hintInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#hintInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="hintInverted_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#hintInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="hintInverted_rgba">rgba(255,255,255,0.3)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(255,255,255,0.12);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">disabledInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#disabledInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="disabledInverted_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#disabledInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="disabledInverted_rgba">rgba(255,255,255,0.12)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+			<section class="bounds margin--top padding--top">
+				<h1 class="text--display2 chunk">ui</h1>
+			</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(0,0,0,0.12);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">border</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#border_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="border_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#border_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="border_rgba">rgba(0,0,0,0.12)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgba(0,0,0,0.54);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">borderDark</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#borderDark_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="borderDark_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#borderDark_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="borderDark_rgba">rgba(0,0,0,0.54)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(255,255,255,0.2);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">borderInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#borderInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="borderInverted_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#borderInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="borderInverted_rgba">rgba(255,255,255,0.2)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(255,255,255,0.7);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">borderDarkInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#borderDarkInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="borderDarkInverted_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#borderDarkInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="borderDarkInverted_rgba">rgba(255,255,255,0.7)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(0,0,0,0.26);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">separator</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#separator_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="separator_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#separator_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="separator_rgba">rgba(0,0,0,0.26)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(0,0,255,0.05);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">highlight</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#highlight_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="highlight_hex">#0000ff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#highlight_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="highlight_rgba">rgba(0,0,255,0.05)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(0,0,0,0.05);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">selection</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#selection_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="selection_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#selection_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="selection_rgba">rgba(0,0,0,0.05)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(0,0,0,0.4);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">dimmingOverlay</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#dimmingOverlay_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="dimmingOverlay_hex">#000000</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#dimmingOverlay_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="dimmingOverlay_rgba">rgba(0,0,0,0.4)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(56,56,15,0.09);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">tappable</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tappable_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="tappable_hex">#38380f</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tappable_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="tappable_rgba">rgba(56,56,15,0.09)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgba(255,246,196,0.27);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">tappableInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tappableInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="tappableInverted_hex">#fff6c4</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#tappableInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="tappableInverted_rgba">rgba(255,246,196,0.27)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(255,255,255);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">contentBG</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#contentBG_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="contentBG_hex">#ffffff</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#contentBG_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="contentBG_rgba">rgb(255,255,255)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all inverted" style="background-color: rgb(15,23,33);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">contentBGInverted</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#contentBGInverted_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="contentBGInverted_hex">#0f1721</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#contentBGInverted_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="contentBGInverted_rgba">rgb(15,23,33)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all " style="background-color: rgb(250,250,250);">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">collectionBG</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#collectionBG_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="collectionBG_hex">#fafafa</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#collectionBG_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="collectionBG_rgba">rgb(250,250,250)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
 
 	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function() {
+			new Clipboard('.colorValue');
+		});
+	</script>
 </body>
 </html>

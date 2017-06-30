@@ -70,16 +70,15 @@ const getColorCategory = f => {
 	};
 };
 
-//
-// build context and write file
-//
-fs.readdirSync(SRC_DIR)
-	.filter(f => f.includes('.json'))
-	.forEach(f => {
-		context.categories.push(getColorCategory(f));
-	});
+exports.build = () => {
+	fs.readdirSync(SRC_DIR)
+		.filter(f => f.includes('.json'))
+		.forEach(f => {
+			context.categories.push(getColorCategory(f));
+		});
 
-fs.writeFileSync(
-	`${DEST_DIR}index.html`,
-	template(context)
-);
+	fs.writeFileSync(
+		`${DEST_DIR}index.html`,
+		template(context)
+	);
+};

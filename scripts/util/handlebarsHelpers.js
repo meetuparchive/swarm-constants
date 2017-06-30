@@ -11,7 +11,11 @@ const getInvertedClass = {
 	 */
 	helperFn: colorArr => {
 		const brightness = Color(getRgbaString(colorArr)).getBrightness();
-		return brightness < 160 ? 'inverted' : '';
+		const veryTransparent = colorArr[3] < 0.5;
+
+		return brightness < 160 && !veryTransparent ?
+			'inverted'
+			: '';
 	}
 };
 
@@ -28,7 +32,13 @@ const toHex = {
 
 const toRgba = {
 	helperName: 'toRgba',
-	helperFn: getRgbaString
+	helperFn: arr => {
+		if ( arr[3] < 1 ) {
+			return getRgbaString(arr);
+		} else {
+			return `rgb(${arr[0]},${arr[1]},${arr[2]})`;
+		}
+	}
 };
 
 

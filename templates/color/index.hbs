@@ -15,21 +15,13 @@
 		}
 		.colorValue {
 			cursor: pointer;
-		}
-		.colorValue dt,
-		.colorValue dd {
-			display: inline-block;
-			padding: 8px;
-		}
-		.colorValue dt {
-			margin-right: 16px;
-			font-weight: bold;
+			padding: 6px 12px;
 		}
 		.colorValue:hover {
 			background: rgba(255,255,255,0.5);
 		}
 		.colorValue:active {
-			background: rgba(255,230,0,0.7);
+			background: rgba(255,255,255,0.33);
 		}
 
 		.checkerBg {
@@ -38,18 +30,50 @@
 	</style>
 </head>
 <body>
-	<div class="bounds column checkerBg" style="min-height: 100vh;">
+	<div class="column" style="min-height: 100vh;">
 
 		{{#each categories}}
-			<h1 class="text--big chunk">{{name}}</h1>
+			<section class="bounds margin--top padding--top">
+				<h1 class="text--display2 chunk">{{name}}</h1>
+			</section>
 			{{#each colors}}
-				<div class="{{getInvertedClass value}}" style="background-color: {{toRgba value}}">
-					<p>{{name}}</p>
-					<p class="text-secondary">{{value}}</p>
-				</div>
+				<section class="bounds padding--none margin--bottom">
+					<div class="checkerBg">
+						<div class="padding--all {{getInvertedClass value}}" style="background-color: {{toRgba value}};">
+							<div class="spreadable atMedium_spreadable--spread">
+								<div class="spreadable-item valign--middle">
+									<h2 class="text--big text--heavy">{{name}}</h2>
+								</div>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#{{name}}_hex"
+								>
+									<dt class="text--secondary">HEX:</dt>
+									<dd id="{{name}}_hex">{{toHex value}}</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#{{name}}_rgba"
+								>
+									<dt class="text--secondary">RGBA:</dt>
+									<dd id="{{name}}_rgba">{{toRgba value}}</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</section>
 			{{/each}}
 		{{/each}}
 
 	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function() {
+			new Clipboard('.colorValue');
+		});
+	</script>
 </body>
 </html>
