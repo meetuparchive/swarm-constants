@@ -9,11 +9,10 @@ const getInvertedClass = {
 	 * @param {Array} colorArr - the rgba array to convert
 	 * @returns {String} css class name ('inverted' if color is dark)
 	 */
-	 helperFn: colorArr =>
-		 Color(getRgbaString(colorArr))
-			.isDark() ?
-				'inverted'
-				: ''
+	helperFn: colorArr => {
+		const brightness = Color(getRgbaString(colorArr)).getBrightness();
+		return brightness < 160 ? 'inverted' : '';
+	}
 };
 
 const toHex = {

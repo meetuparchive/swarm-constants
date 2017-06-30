@@ -13,9 +13,18 @@ const helpers = require('./util/handlebarsHelpers');
  * `node colorDoc`
  */
 
-const SRC_DIR = '../properties/color/';
-const DEST_DIR = 'dist/doc/color/';
-const templatePath = '../templates/color/index.hbs';
+const SRC_DIR = './properties/color/';
+const DEST_DIR = './dist/doc/color/';
+const templatePath = './templates/color/index.hbs';
+
+// add custom helpers to Handlebars
+helpers
+	.forEach((h) => {
+		Handlebars.registerHelper(
+			h.helperName,
+			h.helperFn
+		);
+	});
 
 const template = Handlebars.compile(
 		fs.readFileSync(templatePath, 'utf8')
@@ -61,25 +70,16 @@ const getColorCategory = f => {
 	};
 };
 
+//
+// build context and write file
+//
 fs.readdirSync(SRC_DIR)
 	.filter(f => f.includes('.json'))
 	.forEach(f => {
 		context.categories.push(getColorCategory(f));
 	});
 
-helpers
-	.forEach((h) => {
-		Handlebars.registerHelper(
-			h.helperName,
-			h.helperFn
-		);
-	});
-
-console.warn(JSON.stringify(context, null, 2));
-
-/*
- *fs.writeFileSync(
- *   `${DEST_DIR}doc.html`,
- *   renderFileContent()
- *);
- */
+fs.writeFileSync(
+	`${DEST_DIR}index.html`,
+	template(context)
+);
