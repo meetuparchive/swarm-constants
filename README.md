@@ -20,12 +20,11 @@ See the `dist/` directory for platfrom-specific distributions.
 - scss
 
 ## Development
+
+### Modifying or adding values
 Edit `json` files in `properties/`. Please use the 
 ["Category/Type/Item" convention](https://amzn.github.io/style-dictionary/property_structure) 
 for object structure. Colors should be expressed as an rgba array, `[R,G,B,A]`.
-
-We commit our distributions to make it easier for consumers to import design constants. 
-To regenerate distributions, use command `yarn run build`.
 
 #### Adding distributions
 The `style-dictionary` library uses a [`config.json`](https://amzn.github.io/style-dictionary/configuration) 
@@ -33,6 +32,8 @@ file to configure distributions. You can use one of the [`built in formats`](htt
 provided by `style-dictionary`, or you can register your own format.
 
 ### Scripts
+We commit our distributions to make it easier for consumers to import design constants. 
+To regenerate distributions, use command `yarn run build`.
 
 Command              | Result
 -------------------- | -----------------------------
