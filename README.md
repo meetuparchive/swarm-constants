@@ -11,7 +11,15 @@ Documentation is generated from `properties/` and published on github pages:
 - [Colors](https://meetup.github.io/swarm-constants/)
 - more to come...
 
-### Usage
+## Using `swarm-constants` in your application
+See the `dist/` directory for platfrom-specific distributions.
+
+#### Currently supported distributions
+- static docs
+- android (colors)
+- scss
+
+## Development
 Edit `json` files in `properties/`. Please use the 
 ["Category/Type/Item" convention](https://amzn.github.io/style-dictionary/property_structure) 
 for object structure. Colors should be expressed as an rgba array, `[R,G,B,A]`.
@@ -30,8 +38,5 @@ Command              | Result
 -------------------- | -----------------------------
 `yarn run build`     | Compiles distributions
 
-
-### Known issues
-- colors converted to RGB hex in Sass
-- alpha channels not preserved in output
-	- needs `transform` updates in config
+### TODO
+- iOS distribution
