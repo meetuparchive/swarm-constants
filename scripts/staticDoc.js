@@ -10,7 +10,7 @@ const helpers = require('./util/handlebarsHelpers');
  * to build type-specific docs.
  *
  * Usage:
- * `node colorDoc`
+ * `node staticDoc`
  */
 
 const SRC_DIR = './properties/color/';
