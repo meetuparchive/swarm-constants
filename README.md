@@ -1,10 +1,14 @@
 swarm-constants
 ===============
-**In development. Not ready for production use**
 
 This project contains cross-platform "design constants" for the 
 [Swarm Design System](https://github.com/meetup/swarm-design-system), generated 
 using [`style-dictionary`](https://github.com/amzn/style-dictionary);
+
+## Documentation
+Documentation is generated from `properties/` and published on github pages:
+
+- [Colors](https://meetup.github.io/swarm-constants/)
 
 ### Usage
 Edit `json` files in `properties/`. Please use the 
