@@ -8,6 +8,13 @@
 		body {
 			font-family: Monaco, Consolas, monospace;
 		}
+		.darkBg {
+			background-color:#0f1721;
+		}
+		.darkBg .catName,
+		.darkBg label {
+			color: white;
+		}
 		.colorSection {
 			display: flex;
 			flex-direction: column;
@@ -16,6 +23,7 @@
 		.colorValue {
 			cursor: pointer;
 			padding: 6px 12px;
+			min-width: 25% !important;
 		}
 		.colorValue:hover {
 			background: rgba(255,255,255,0.5);
@@ -31,10 +39,14 @@
 </head>
 <body>
 	<div class="column" style="min-height: 100vh;">
+		<section class="bounds align--right">
+			<input style="height: auto; display: inline-block;" id="toggleBg" type="checkbox" />
+			<label style="display: inline-block;" for="toggleBg">Dark background</label>
+		</section>
 
 		{{#each categories}}
 			<section class="bounds margin--top padding--top">
-				<h1 class="text--display2 chunk">{{name}}</h1>
+				<h1 class="catName text--display2 chunk">{{name}}</h1>
 			</section>
 			{{#each colors}}
 				<section class="bounds padding--none margin--bottom">
@@ -69,10 +81,29 @@
 
 	</div>
 
+	<script
+		src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+		crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 	<script type="text/javascript">
-		document.addEventListener("DOMContentLoaded", function() {
+
+		function onBgToggle($input, $body) {
+			var useDarkBg = $input.prop('checked');
+			if (useDarkBg) {
+				$body.addClass('darkBg')
+			} else {
+				$body.removeClass('darkBg')
+			}
+		};
+
+		$(function() {
+			var body = $(document.body);
 			new Clipboard('.colorValue');
+
+			$('#toggleBg').on('change', function(e) {
+				onBgToggle($(e.target), body);
+			});
 		});
 	</script>
 </body>
