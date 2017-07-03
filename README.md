@@ -9,6 +9,7 @@ using [`style-dictionary`](https://amzn.github.io/style-dictionary/);
 Documentation is generated from `properties/` and published on github pages:
 
 - [Colors](https://meetup.github.io/swarm-constants/)
+- more to come...
 
 ### Usage
 Edit `json` files in `properties/`. Please use the 
