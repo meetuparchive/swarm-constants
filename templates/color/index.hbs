@@ -25,7 +25,8 @@
 		.colorValue {
 			cursor: pointer;
 			padding: 6px 12px;
-			min-width: 30% !important;
+			min-width: 22% !important;
+			font-size: 12px;
 		}
 		.colorValue:hover {
 			background: rgba(255,255,255,0.5);
@@ -82,6 +83,14 @@
 								>
 									<dt class="text--secondary">RGBA:</dt>
 									<dd id="{{name}}_rgba">{{toRgba value}}</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#{{name}}_sass"
+								>
+									<dt class="text--secondary">Sass:</dt>
+									<dd id="{{name}}_sass">$C_{{name}}</dd>
 								</dl>
 							</div>
 						</div>
