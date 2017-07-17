@@ -2,7 +2,7 @@
 
 <!--
   Do not edit directly
-  Generated on Mon Jul 17 2017 13:38:51 GMT-0400 (EDT)
+  Generated on Mon Jul 17 2017 14:16:31 GMT-0400 (EDT)
 -->
 <resources>
   <color name="color_base_white">#ffffffff</color>
@@ -40,8 +40,8 @@
   <color name="color_text_disabled">#1f2e3e48</color>
   <color name="color_text_primary_inverted">#ffffffff</color>
   <color name="color_text_secondary_inverted">#b3ffffff</color>
-  <color name="color_text_tertiary_inverted">#4dffffff</color>
-  <color name="color_text_hint_inverted">#4dffffff</color>
+  <color name="color_text_tertiary_inverted">#59ffffff</color>
+  <color name="color_text_hint_inverted">#59ffffff</color>
   <color name="color_text_disabled_inverted">#1fffffff</color>
   <color name="color_ui_border">#1f2e3e48</color>
   <color name="color_ui_border_dark">#8a2e3e48</color>
