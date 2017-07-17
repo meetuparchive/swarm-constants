@@ -3,19 +3,19 @@
 		"text": {
 
 			"primary": {
-				"value": [0, 0, 0, 0.87]
+				"value": [46, 62, 72, 1]
 			},
 			"secondary": {
-				"value": [0, 0, 0, 0.54]
+				"value": [46, 62, 72, 0.60]
 			},
 			"tertiary": {
-				"value": [0, 0, 0, 0.26]
+				"value": [46, 62, 72, 0.35]
 			},
 			"hint": {
-				"value": [0, 0, 0, 0.26]
+				"value": [46, 62, 72, 0.35]
 			},
 			"disabled": {
-				"value": [0, 0, 0, 0.12]
+				"value": [46, 62, 72, 0.12]
 			},
 			"primaryInverted": {
 				"value": [255, 255, 255, 1]
