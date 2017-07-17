@@ -2,7 +2,7 @@
 
 <!--
   Do not edit directly
-  Generated on Tue Jul 11 2017 16:18:09 GMT-0400 (EDT)
+  Generated on Mon Jul 17 2017 13:38:51 GMT-0400 (EDT)
 -->
 <resources>
   <color name="color_base_white">#ffffffff</color>
@@ -14,10 +14,10 @@
   <color name="color_base_yellow">#ffffe533</color>
   <color name="color_base_light_blue">#ff4dd1ed</color>
   <color name="color_base_purple">#ff371eac</color>
-  <color name="color_base_blue">#ff3f57ef</color>
+  <color name="color_base_blue">#ff538eed</color>
   <color name="color_base_plum">#ff7000b0</color>
-  <color name="color_base_orange">#ffe96800</color>
-  <color name="color_base_teal">#ff0fd9a3</color>
+  <color name="color_base_orange">#ffff5b0f</color>
+  <color name="color_base_teal">#ff00d480</color>
   <color name="color_base_shamrock">#ff59db33</color>
   <color name="color_base_black">#ff0f1721</color>
   <color name="color_external_facebook">#ff3b5998</color>
@@ -33,28 +33,33 @@
   <color name="color_external_wepay">#ff4891dc</color>
   <color name="color_external_yahoo">#ff7b0099</color>
   <color name="color_external_outlook">#ff0072c6</color>
-  <color name="color_text_primary">#de000000</color>
-  <color name="color_text_secondary">#8a000000</color>
-  <color name="color_text_tertiary">#42000000</color>
-  <color name="color_text_hint">#42000000</color>
-  <color name="color_text_disabled">#1f000000</color>
+  <color name="color_text_primary">#ff2e3e48</color>
+  <color name="color_text_secondary">#992e3e48</color>
+  <color name="color_text_tertiary">#592e3e48</color>
+  <color name="color_text_hint">#592e3e48</color>
+  <color name="color_text_disabled">#1f2e3e48</color>
   <color name="color_text_primary_inverted">#ffffffff</color>
   <color name="color_text_secondary_inverted">#b3ffffff</color>
   <color name="color_text_tertiary_inverted">#4dffffff</color>
   <color name="color_text_hint_inverted">#4dffffff</color>
   <color name="color_text_disabled_inverted">#1fffffff</color>
-  <color name="color_ui_border">#1f000000</color>
-  <color name="color_ui_border_dark">#8a000000</color>
+  <color name="color_ui_border">#1f2e3e48</color>
+  <color name="color_ui_border_dark">#8a2e3e48</color>
   <color name="color_ui_border_inverted">#33ffffff</color>
   <color name="color_ui_border_dark_inverted">#b3ffffff</color>
-  <color name="color_ui_separator">#42000000</color>
+  <color name="color_ui_separator">#422e3e48</color>
   <color name="color_ui_highlight">#0d0000ff</color>
-  <color name="color_ui_selection">#0d000000</color>
-  <color name="color_ui_dimming_overlay">#66000000</color>
+  <color name="color_ui_selection">#0d2e3e48</color>
+  <color name="color_ui_dimming_overlay">#662e3e48</color>
   <color name="color_ui_tappable">#1738380f</color>
   <color name="color_ui_tappable_inverted">#45fff6c4</color>
   <color name="color_ui_content_bg">#ffffffff</color>
   <color name="color_ui_content_bg_inverted">#ff0f1721</color>
   <color name="color_ui_collection_bg">#fffafafa</color>
+  <color name="color_ui_button_bg">#172e3e48</color>
+  <color name="color_ui_field_bg">#082e3e48</color>
+  <color name="color_ui_field_bg_inverted">#33ffffff</color>
+  <color name="color_ui_field_bg_disabled">#052e3e48</color>
+  <color name="color_ui_field_b_ginverted_disabled">#05ffffff</color>
   
 </resources>
