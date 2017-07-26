@@ -8,6 +8,9 @@
 			"borderCard": {
 				"value": [228, 233, 237, 1]
 			},
+			"borderCardTransp": {
+				"value": [41, 77, 107, 0.12]
+			},
 			"borderDark": {
 				"value": [46, 62, 72, 0.54]
 			},
