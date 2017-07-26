@@ -2,12 +2,12 @@
 
 <!--
   Do not edit directly
-  Generated on Mon Jul 17 2017 14:16:31 GMT-0400 (EDT)
+  Generated on Wed Jul 26 2017 13:46:52 GMT-0400 (EDT)
 -->
 <resources>
   <color name="color_base_white">#ffffffff</color>
   <color name="color_base_medium_gray">#ff757575</color>
-  <color name="color_base_light_gray">#fffafafa</color>
+  <color name="color_base_light_gray">#fff6f7f8</color>
   <color name="color_base_red">#fff13a59</color>
   <color name="color_base_dark_red">#ffd32d4a</color>
   <color name="color_base_pink">#ffff99d1</color>
@@ -55,7 +55,7 @@
   <color name="color_ui_tappable_inverted">#45fff6c4</color>
   <color name="color_ui_content_bg">#ffffffff</color>
   <color name="color_ui_content_bg_inverted">#ff0f1721</color>
-  <color name="color_ui_collection_bg">#fffafafa</color>
+  <color name="color_ui_collection_bg">#fff6f7f8</color>
   <color name="color_ui_button_bg">#172e3e48</color>
   <color name="color_ui_field_bg">#082e3e48</color>
   <color name="color_ui_field_bg_inverted">#33ffffff</color>
