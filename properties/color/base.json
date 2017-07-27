@@ -11,6 +11,12 @@
 			"lightGray": {
 				"value": [246, 247, 248, 1]
 			},
+			"coolGrayLight": {
+				"value": [228, 233, 237, 1]
+			},
+			"coolGrayLightTransp": {
+				"value": [41, 77, 107, 0.12]
+			},
 			"red": {
 				"value":  [241, 58, 89, 1]
 			},

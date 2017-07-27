@@ -2,12 +2,14 @@
 
 <!--
   Do not edit directly
-  Generated on Wed Jul 26 2017 15:02:27 GMT-0400 (EDT)
+  Generated on Thu Jul 27 2017 12:12:15 GMT-0400 (EDT)
 -->
 <resources>
   <color name="color_base_white">#ffffffff</color>
   <color name="color_base_medium_gray">#ff757575</color>
   <color name="color_base_light_gray">#fff6f7f8</color>
+  <color name="color_base_cool_gray_light">#ffe4e9ed</color>
+  <color name="color_base_cool_gray_light_transp">#1f294d6b</color>
   <color name="color_base_red">#fff13a59</color>
   <color name="color_base_dark_red">#ffd32d4a</color>
   <color name="color_base_pink">#ffff99d1</color>
@@ -44,7 +46,6 @@
   <color name="color_text_hint_inverted">#59ffffff</color>
   <color name="color_text_disabled_inverted">#1fffffff</color>
   <color name="color_ui_border">#1f2e3e48</color>
-  <color name="color_ui_border_card">#ffe4e9ed</color>
   <color name="color_ui_border_dark">#8a2e3e48</color>
   <color name="color_ui_border_inverted">#33ffffff</color>
   <color name="color_ui_border_dark_inverted">#b3ffffff</color>
