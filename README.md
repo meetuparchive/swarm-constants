@@ -1,6 +1,9 @@
 swarm-constants
 ===============
 
+[![npm version](https://badge.fury.io/js/meetup-web-platform.svg)](https://badge.fury.io/js/meetup-web-platform)
+[![Build Status](https://travis-ci.org/meetup/meetup-web-platform.svg?branch=master)](https://travis-ci.org/meetup/meetup-web-platform)
+
 This project contains cross-platform "design constants" for the 
 [Swarm Design System](https://github.com/meetup/swarm-design-system), generated 
 using [`style-dictionary`](https://amzn.github.io/style-dictionary/);

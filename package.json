@@ -17,6 +17,7 @@
     "tinycolor2": "^1.4.1"
   },
   "dependencies": {
+    "@alrra/travis-scripts": "^3.0.1",
     "gh-pages": "^1.0.0"
   }
 }
