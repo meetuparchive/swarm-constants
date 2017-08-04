@@ -1,0 +1,46 @@
+sudo: false
+language: node_js
+node_js:
+  - "8.0"
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - master  # (PRs to master, master merges, master pushes)
+
+env:
+  global:
+    - CI_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
+    - secure: "CfacPnxC45xP1br2wve0CwrTcd3RD7rawhuB5juk6KIodkjVHWUQP5i0xcUf/yHbaIzmmJpmQf8dRUx49zw1TeJGYPy1hKiVuBV3LL1fsDp4jRYZIcnC+2+7qShhBdsiyDC28FuAkjxnodeWfoy1V3RghKdE9qKHMvUZOgbieCbcTJnKbdYX8c/un6HJFSTaSHkDZYV8/NRpY8TXT1AwEC4Y2nvxQrnjxh2WMDmUdoRL22YCJTttmNnMB7bsmVZRaay9FHuWpikmWwswKM49dg357BhQgMBncaBJSTuyxSQRMnHJZOgbYIajVDPmU+/5VPIJicWy0M6HPU7iSzAREVt7xnjUU56hFYeesd/kTOXjauAGrADf0ToEGCuZ8Zy84lP4HLJ+64Blw1miHog1vFNT1xIU/TUe73vZcxSJElBV4EeSLD0o0Cc8BV+bo8V5/tH0039oYVyHxS5vcRWl8jFlAm6AaEbQJRT9Q4XlhoptXL8/Z3/YSlLhDglu10WBM4XFcLA3TO9gwG/h6ilVl9rgoPWJTOY7gnKJwZe7IEM8ZZCnyp5B0BdS0hG8ezESwDbvWTR85Uyn5nukj86S+76BiIckMkHoDdGVKKTa4XoUO6nqbEuziZOzuv8E6L+E7EBTmgTYfnVzTpgQPgbBJgwr1SZ42p9C4eTkzTNDwAg="
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_f9bd89dcee64_key -iv $encrypted_f9bd89dcee64_iv -in '.travis/github_deploy_key.enc' -out github_deploy_key -d
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+
+before_script:
+  - git diff --exit-code
+
+after_script:
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - $(npm bin)/set-up-ssh --key "$encrypted_f9bd89dcee64_key" --iv "$encrypted_f9bd89dcee64_iv" --path-encrypted-key ".travis/github_deploy_key.enc"
+  - >
+    [ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ] &&
+    export GIT_TAG=$(make version) ||
+    export GIT_TAG=$(make version)-beta
+  - >
+    [ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ] &&
+    export NPM_TAG=latest ||
+    export NPM_TAG=beta
+  - echo "GIT_TAG=$GIT_TAG"
+  - echo "NPM_TAG=$NPM_TAG"
+  - >
+    [ "${TRAVIS_BRANCH}" != "master" ] &&
+    echo "skipping versioning" ||
+    yarn run build &&
+    npm version $GIT_TAG -m "Version $GIT_TAG built by Travis CI - https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_JOB_ID" &&
+    git push --tags git@github.com:$TRAVIS_REPO_SLUG.git &&
+    npm publish --tag $NPM_TAG
