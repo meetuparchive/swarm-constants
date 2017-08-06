@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "yarn run eslint ./properties/**/*.json",
     "build": "yarn run lint && node scripts/build.js",
-    "publish-docs": "yarn run build && node scripts/ghPages.js"
+    "publish-docs": "node scripts/ghPages.js"
   },
   "author": "adamd@meetup.com",
   "license": "MIT",
