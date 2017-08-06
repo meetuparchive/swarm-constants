@@ -2,6 +2,12 @@
 	"color": {
 		"ui": {
 
+			"attention": {
+				"value": [255, 91, 15, 1]
+			},
+			"success": {
+				"value": [0, 212, 128, 1]
+			},
 			"border": {
 				"value": [46, 62, 72, 0.12]
 			},

@@ -2,7 +2,7 @@
 
 <!--
   Do not edit directly
-  Generated on Sun Aug 06 2017 18:03:54 GMT-0400 (EDT)
+  Generated on Sun Aug 06 2017 18:23:34 GMT-0400 (EDT)
 -->
 <resources>
   <color name="color_base_white">#ffffffff</color>
@@ -46,6 +46,8 @@
   <color name="color_text_tertiary_inverted">#59ffffff</color>
   <color name="color_text_hint_inverted">#59ffffff</color>
   <color name="color_text_disabled_inverted">#1fffffff</color>
+  <color name="color_ui_attention">#ffff5b0f</color>
+  <color name="color_ui_success">#ff00d480</color>
   <color name="color_ui_border">#1f2e3e48</color>
   <color name="color_ui_border_dark">#8a2e3e48</color>
   <color name="color_ui_border_inverted">#33ffffff</color>
