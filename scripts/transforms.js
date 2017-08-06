@@ -2,6 +2,13 @@ const Color = require('tinycolor2');
 const getRgbaString = require('./util/getRgbaString');
 
 /**
+ * @param {String} s
+ * @returns {String} string with first letter capitalized
+ */
+const capitalizeFirstLetter = s =>
+	s.charAt(0).toUpperCase() + s.slice(1);
+
+/**
  * StyleDictionary custom transforms
  * https://amzn.github.io/style-dictionary/transforms
  */
@@ -53,7 +60,9 @@ const prefixC = {
 	name: 'name/cti/prefixC',
 	type: 'name',
 	matcher: prop => prop.attributes.category === 'color',
-	transformer: (prop, options) => `C_${prop.path.pop()}`
+	transformer: (prop, options) => prop.attributes.type === 'text' ?
+		`C_text${capitalizeFirstLetter(prop.path.pop())}`
+		: `C_${prop.path.pop()}`
 };
 
 
