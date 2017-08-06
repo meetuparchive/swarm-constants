@@ -2,12 +2,13 @@
 
 <!--
   Do not edit directly
-  Generated on Thu Jul 27 2017 12:12:15 GMT-0400 (EDT)
+  Generated on Sun Aug 06 2017 18:03:36 GMT-0400 (EDT)
 -->
 <resources>
   <color name="color_base_white">#ffffffff</color>
-  <color name="color_base_medium_gray">#ff757575</color>
   <color name="color_base_light_gray">#fff6f7f8</color>
+  <color name="color_base_medium_gray">#ff757575</color>
+  <color name="color_base_dark_gray">#ff353e48</color>
   <color name="color_base_cool_gray_light">#ffe4e9ed</color>
   <color name="color_base_cool_gray_light_transp">#1f294d6b</color>
   <color name="color_base_red">#fff13a59</color>

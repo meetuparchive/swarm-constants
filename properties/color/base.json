@@ -5,11 +5,14 @@
 			"white": {
 				"value": [255, 255, 255, 1]
 			},
+			"lightGray": {
+				"value": [246, 247, 248, 1]
+			},
 			"mediumGray": {
 				"value": [117, 117, 117, 1]
 			},
-			"lightGray": {
-				"value": [246, 247, 248, 1]
+			"darkGray": {
+				"value": [53,62,72,1]
 			},
 			"coolGrayLight": {
 				"value": [228, 233, 237, 1]
