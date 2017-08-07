@@ -65,9 +65,23 @@ const prefixC = {
 		: `C_${prop.path.pop()}`
 };
 
+//
+// Name transform
+// converts "cti" object structure to valid js var `C_COLOR_NAME`
+//
+const jsConstant = {
+	name: 'name/cti/jsConstant',
+	type: 'name',
+	matcher: prop => prop.attributes.category === 'color',
+	transformer: (prop, options) => prop.attributes.type === 'text' ?
+		`C_TEXT_${prop.path.pop().toUpperCase()}`
+		: `C_${prop.path.pop().toUpperCase().replace(/\-+/, '_')}`
+};
+
 
 module.exports = [
 	optimizedRGBA,
 	androidHex8,
 	prefixC,
+	jsConstant,
 ];
