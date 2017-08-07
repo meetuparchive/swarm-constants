@@ -17,6 +17,14 @@ const SRC_DIR = './properties/color/';
 const DEST_DIR = './dist/doc/color/';
 const templatePath = './templates/color/index.hbs';
 
+/**
+ * @param {String} s
+ * @returns {String} string with first letter capitalized
+ */
+const capitalizeFirstLetter = s =>
+	s.charAt(0).toUpperCase() + s.slice(1);
+
+
 // add custom helpers to Handlebars
 helpers
 	.forEach((h) => {
@@ -40,12 +48,13 @@ const context = {
  * template context
  *
  * @param {Object} colors - list of color objects
+ * @param {String} typeName - property type (style-dictionary CTI convention)
  * @returns {Array} transformed flattened color objects
  */
-const getColorList = colors => {
+const getColorList = (colors, typeName) => {
 	return Object.keys(colors)
 		.map(k => ({
-			name: k,
+			name: typeName === 'text' ? `text${capitalizeFirstLetter(k)}` : k,
 			value: colors[k].value
 		}));
 };
@@ -58,15 +67,15 @@ const getColorList = colors => {
  * @param {String} f - json file name
  * @returns {Object} native object representing a category of properties
  */
-const getColorCategory = f => {
+const getColorType = f => {
 	const catJSON = fs.readFileSync(`${SRC_DIR}/${f}`, 'utf8');
 	const catObj = JSON.parse(catJSON).color;
-	const catName = Object.keys(catObj)[0];
-	const catColors = catObj[catName];
+	const typeName = Object.keys(catObj)[0];
+	const typeColors = catObj[typeName];
 
 	return {
-		name: catName,
-		colors: getColorList(catColors),
+		name: typeName,
+		colors: getColorList(typeColors, typeName),
 	};
 };
 
@@ -74,7 +83,7 @@ exports.build = () => {
 	fs.readdirSync(SRC_DIR)
 		.filter(f => f.includes('.json'))
 		.forEach(f => {
-			context.categories.push(getColorCategory(f));
+			context.categories.push(getColorType(f));
 		});
 
 	fs.writeFileSync(
