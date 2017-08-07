@@ -1,6 +1,6 @@
 {
   "name": "swarm-constants",
-  "version": "0.0.1",
+  "version": "0.1.14",
   "description": "UI Constants for Meetup's Swarm Design System",
   "scripts": {
     "lint": "yarn run eslint ./properties/**/*.json",
