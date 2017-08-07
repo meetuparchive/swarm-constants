@@ -1,5 +1,10 @@
 const Color = require('tinycolor2');
 const getRgbaString = require('./getRgbaString');
+const transforms = require('../transforms');
+
+const jsConstantTransformer = transforms
+	.filter(t => t.name === 'name/cti/jsConstant')
+	.pop().transformer;
 
 
 const getInvertedClass = {
@@ -48,9 +53,21 @@ const toSassVar = {
 		: `$C_${color.name}`
 };
 
+const toJSVar = {
+	helperName: 'toJSVar',
+	helperFn: color => jsConstantTransformer(
+		{
+			attributes: { type: '' },
+			path: [color.name]
+		},
+		color.type
+	)
+}
+
 module.exports = [
 	getInvertedClass,
 	toHex,
 	toRgba,
 	toSassVar,
+	toJSVar,
 ];

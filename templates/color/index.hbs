@@ -25,7 +25,6 @@
 		.colorValue {
 			cursor: pointer;
 			padding: 6px 12px;
-			min-width: 22% !important;
 			font-size: 12px;
 		}
 		.colorValue:hover {
@@ -91,6 +90,14 @@
 								>
 									<dt class="text--secondary">Sass:</dt>
 									<dd id="{{name}}_sass">{{toSassVar this}}</dd>
+								</dl>
+								<dl
+									title="Click to copy"
+									class="spreadable-item spreadable-item--shrink colorValue valign--middle align--right atMedium_align--left"
+									data-clipboard-target="#{{name}}_js"
+								>
+									<dt class="text--secondary">JS:</dt>
+									<dd id="{{name}}_js">{{toJSVar this}}</dd>
 								</dl>
 							</div>
 						</div>
