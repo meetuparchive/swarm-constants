@@ -41,7 +41,7 @@
 </head>
 <body>
 	<div class="column" style="min-height: 100vh;">
-		<section id="header" class="bounds">
+		<section id="header" class="bounds bounds--wide">
 			<div class="row">
 				<div class="row-item">
 					<h1 class="chunk text--display1">swarm-constants<span class="text--secondary">:colors</span></h1>
@@ -57,11 +57,11 @@
 		</section>
 
 		{{#each categories}}
-			<section class="bounds margin--top padding--top">
+			<section class="bounds bounds--wide  margin--top padding--top">
 				<h1 class="catName text--display2 chunk">{{name}}</h1>
 			</section>
 			{{#each colors}}
-				<section class="bounds padding--none margin--bottom">
+				<section class="bounds bounds--wide  padding--none margin--bottom">
 					<div class="checkerBg">
 						<div class="padding--all {{getInvertedClass value}}" style="background-color: {{toRgba value}};">
 							<div class="spreadable atMedium_spreadable--spread">
@@ -90,7 +90,7 @@
 									data-clipboard-target="#{{name}}_sass"
 								>
 									<dt class="text--secondary">Sass:</dt>
-									<dd id="{{name}}_sass">$C_{{name}}</dd>
+									<dd id="{{name}}_sass">{{toSassVar this}}</dd>
 								</dl>
 							</div>
 						</div>

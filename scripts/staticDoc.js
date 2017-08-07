@@ -17,14 +17,6 @@ const SRC_DIR = './properties/color/';
 const DEST_DIR = './dist/doc/color/';
 const templatePath = './templates/color/index.hbs';
 
-/**
- * @param {String} s
- * @returns {String} string with first letter capitalized
- */
-const capitalizeFirstLetter = s =>
-	s.charAt(0).toUpperCase() + s.slice(1);
-
-
 // add custom helpers to Handlebars
 helpers
 	.forEach((h) => {
@@ -54,8 +46,9 @@ const context = {
 const getColorList = (colors, typeName) => {
 	return Object.keys(colors)
 		.map(k => ({
-			name: typeName === 'text' ? `text${capitalizeFirstLetter(k)}` : k,
-			value: colors[k].value
+			name: k,
+			value: colors[k].value,
+			type: typeName,
 		}));
 };
 

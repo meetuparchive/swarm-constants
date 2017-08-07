@@ -41,9 +41,16 @@ const toRgba = {
 	}
 };
 
+const toSassVar = {
+	helperName: 'toSassVar',
+	helperFn: color => color.type === 'text' ?
+		`$C_text${color.name.charAt(0).toUpperCase() + color.name.slice(1)}`
+		: `$C_${color.name}`
+};
 
 module.exports = [
 	getInvertedClass,
 	toHex,
 	toRgba,
+	toSassVar,
 ];
