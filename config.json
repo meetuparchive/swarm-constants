@@ -1,47 +1,47 @@
 {
-  "source": ["./properties/color/*.json"],
-  "platforms": {
-    "js": {
-      "transforms": [
-			"attribute/cti",
-			"name/cti/jsConstant",
-			"color/optimizedRGBA"
-		],
-      "buildPath": "./dist/",
-      "files": [
-			{
-			  "destination": "js/colorConstants.js",
-			  "format": "javascript/es6"
-			}
-		]
-    },
-    "scss": {
-      "transforms": [
-			"attribute/cti",
-			"name/cti/prefixC",
-			"color/optimizedRGBA"
-		],
-      "buildPath": "./dist/",
-      "files": [
-			{
-			  "destination": "scss/_colors.scss",
-			  "format": "scss/variables"
-			}
-		]
-    },
-    "android": {
-      "transforms": [
-			"attribute/cti",
-			"name/cti/snake",
-			"color/androidHex8"
-		],
-      "buildPath": "./dist/",
-      "files": [
-			{
-			  "destination": "android/colors.xml",
-			  "template": "android/colors"
-			}
-		]
-    }
-  }
+	"source": ["./properties/color/*.json"],
+	"platforms": {
+		"js": {
+			"transforms": [
+				"attribute/cti",
+				"name/cti/jsConstant",
+				"color/optimizedRGBA"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "js/colorConstants.js",
+					"format": "javascript/es6"
+				}
+			]
+		},
+		"scss": {
+			"transforms": [
+				"attribute/cti",
+				"name/cti/prefixC",
+				"color/optimizedRGBA"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "scss/_colors.scss",
+					"format": "scss/variables"
+				}
+			]
+		},
+		"android": {
+			"transforms": [
+				"attribute/cti",
+				"name/cti/snake",
+				"color/androidHex8"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "android/colors.xml",
+					"template": "android/colors"
+				}
+			]
+		}
+	}
 }
