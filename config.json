@@ -11,7 +11,7 @@
 			"files": [
 				{
 					"destination": "js/colorConstants.js",
-					"format": "javascript/es6"
+					"format": "javascript/commonJS"
 				}
 			]
 		},
