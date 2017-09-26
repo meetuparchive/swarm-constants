@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue Aug 15 2017 17:04:53 GMT-0400 (EDT)
+ * Generated on Mon Aug 21 2017 13:39:45 GMT-0400 (EDT)
  */
 
 exports.C_WHITE = 'rgb(255,255,255)';
@@ -9,6 +9,8 @@ exports.C_MEDIUMGRAY = 'rgb(117,117,117)';
 exports.C_DARKGRAY = 'rgb(53,62,72)';
 exports.C_COOLGRAYLIGHT = 'rgb(228,233,237)';
 exports.C_COOLGRAYLIGHTTRANSP = 'rgba(41,77,107,0.12)';
+exports.C_COOLGRAYMEDIUM = 'rgb(151,159,164)';
+exports.C_COOLGRAYMEDIUMTRANSP = 'rgba(84,96,107,0.6)';
 exports.C_RED = 'rgb(241,58,89)';
 exports.C_DARKRED = 'rgb(211,45,74)';
 exports.C_PINK = 'rgb(255,153,209)';

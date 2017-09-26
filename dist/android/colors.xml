@@ -2,7 +2,7 @@
 
 <!--
   Do not edit directly
-  Generated on Tue Aug 15 2017 17:04:53 GMT-0400 (EDT)
+  Generated on Mon Aug 21 2017 13:39:45 GMT-0400 (EDT)
 -->
 <resources>
   <color name="color_base_white">#ffffffff</color>
@@ -11,6 +11,8 @@
   <color name="color_base_dark_gray">#ff353e48</color>
   <color name="color_base_cool_gray_light">#ffe4e9ed</color>
   <color name="color_base_cool_gray_light_transp">#1f294d6b</color>
+  <color name="color_base_cool_gray_medium">#ff979fa4</color>
+  <color name="color_base_cool_gray_medium_transp">#9954606b</color>
   <color name="color_base_red">#fff13a59</color>
   <color name="color_base_dark_red">#ffd32d4a</color>
   <color name="color_base_pink">#ffff99d1</color>

@@ -20,6 +20,12 @@
 			"coolGrayLightTransp": {
 				"value": [41, 77, 107, 0.12]
 			},
+			"coolGrayMedium": {
+				"value": [151, 159, 164, 1]
+			},
+			"coolGrayMediumTransp": {
+				"value": [84, 96, 107, 0.6]
+			},
 			"red": {
 				"value":  [241, 58, 89, 1]
 			},
