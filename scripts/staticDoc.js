@@ -1,5 +1,6 @@
 const Handlebars = require('handlebars');
 const fs = require('fs');
+const mkdirp = require('mkdirp');
 const helpers = require('./util/handlebarsHelpers');
 
 /**
@@ -79,6 +80,9 @@ exports.build = () => {
 			context.categories.push(getColorType(f));
 		});
 
+	if (!fs.existsSync(DEST_DIR)) {
+		mkdirp.sync(DEST_DIR);
+	}
 	fs.writeFileSync(
 		`${DEST_DIR}index.html`,
 		template(context)

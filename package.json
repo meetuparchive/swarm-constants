@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "UI Constants for Meetup's Swarm Design System",
   "directories": {
-    "dist":"dist"
+    "dist": "dist"
   },
   "scripts": {
     "lint": "yarn run eslint ./properties/**/*.json",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@alrra/travis-scripts": "^3.0.1",
-    "gh-pages": "^1.0.0"
+    "gh-pages": "^1.0.0",
+    "mkdirp": "^0.5.1"
   }
 }
