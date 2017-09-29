@@ -2,7 +2,7 @@
 
 <!--
   Do not edit directly
-  Generated on Mon Aug 21 2017 13:39:45 GMT-0400 (EDT)
+  Generated on Thu Sep 28 2017 12:21:17 GMT-0400 (EDT)
 -->
 <resources>
   <color name="color_base_white">#ffffffff</color>
@@ -19,7 +19,7 @@
   <color name="color_base_yellow">#ffffe533</color>
   <color name="color_base_light_blue">#ff4dd1ed</color>
   <color name="color_base_purple">#ff371eac</color>
-  <color name="color_base_blue">#ff538eed</color>
+  <color name="color_base_blue">#ff2ba1c3</color>
   <color name="color_base_plum">#ff7000b0</color>
   <color name="color_base_orange">#ffff5b0f</color>
   <color name="color_base_teal">#ff00d480</color>
@@ -63,7 +63,7 @@
   <color name="color_ui_content_bg">#ffffffff</color>
   <color name="color_ui_content_bg_inverted">#ff0f1721</color>
   <color name="color_ui_collection_bg">#fff6f7f8</color>
-  <color name="color_ui_button_bg">#172e3e48</color>
+  <color name="color_ui_button_bg_neutral">#172e3e48</color>
   <color name="color_ui_field_bg">#082e3e48</color>
   <color name="color_ui_field_bg_inverted">#33ffffff</color>
   <color name="color_ui_field_bg_disabled">#052e3e48</color>

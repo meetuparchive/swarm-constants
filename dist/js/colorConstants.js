@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon Aug 21 2017 13:39:45 GMT-0400 (EDT)
+ * Generated on Thu Sep 28 2017 12:21:17 GMT-0400 (EDT)
  */
 
 exports.C_WHITE = 'rgb(255,255,255)';
@@ -17,7 +17,7 @@ exports.C_PINK = 'rgb(255,153,209)';
 exports.C_YELLOW = 'rgb(255,229,51)';
 exports.C_LIGHTBLUE = 'rgb(77,209,237)';
 exports.C_PURPLE = 'rgb(55,30,172)';
-exports.C_BLUE = 'rgb(83,142,237)';
+exports.C_BLUE = 'rgb(43,161,195)';
 exports.C_PLUM = 'rgb(112,0,176)';
 exports.C_ORANGE = 'rgb(255,91,15)';
 exports.C_TEAL = 'rgb(0,212,128)';
@@ -61,7 +61,7 @@ exports.C_TAPPABLEINVERTED = 'rgba(255,246,196,0.27)';
 exports.C_CONTENTBG = 'rgb(255,255,255)';
 exports.C_CONTENTBGINVERTED = 'rgb(15,23,33)';
 exports.C_COLLECTIONBG = 'rgb(246,247,248)';
-exports.C_BUTTONBG = 'rgba(46,62,72,0.09)';
+exports.C_BUTTONBGNEUTRAL = 'rgba(46,62,72,0.09)';
 exports.C_FIELDBG = 'rgba(46,62,72,0.03)';
 exports.C_FIELDBGINVERTED = 'rgba(255,255,255,0.2)';
 exports.C_FIELDBG_DISABLED = 'rgba(46,62,72,0.02)';
