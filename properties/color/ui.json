@@ -47,6 +47,9 @@
 			"collectionBG": {
 				"value": [246, 247, 248, 1]
 			},
+			"buttonBG": {
+				"value": [46, 62, 72, 0.09]
+			},
 			"buttonBGNeutral": {
 				"value": [46, 62, 72, 0.09]
 			},
