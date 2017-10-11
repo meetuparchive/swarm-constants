@@ -6,4 +6,4 @@
 
 node_modules/
 github_deploy_key
-dist/
+dist/**/*
