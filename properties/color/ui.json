@@ -46,20 +46,7 @@
 			},
 			"collectionBG": {
 				"value": [246, 247, 248, 1]
-			},
-			"buttonBGNeutral": {
-				"value": [46, 62, 72, 0.09]
-			},
-			"buttonBGNeutral--disabled": {
-				"value": [46, 62, 72, 0.03]
-			},
-			"buttonBGNeutralInverted": {
-				"value": [255, 255, 255, 0.2]
-			},
-			"buttonBGNeutralInverted--disabled": {
-				"value": [255, 255, 255, 0.03]
 			}
-
 		}
 	}
 }

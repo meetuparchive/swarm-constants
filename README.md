@@ -44,7 +44,7 @@ Command              | Result
 
 ### Release notes
 #### v1.2.X
-`$C_buttonBG`, and all variants of `$C_fieldBG` have been removed after the design team re-styled form inputs and buttons. You can use `$C_buttonBGNeutral` in place of `$C_button`, but there's no replacement for `$C_fieldBG` or its variants.
+`buttonBG`, and all variants of `fieldBG` have been removed after the design team re-styled form inputs and buttons. You can use `coolGrayLightTransp` in place of `buttonBG`, but there's no replacement for `fieldBG` or its variants.
 
 ### TODO
 - iOS distribution
