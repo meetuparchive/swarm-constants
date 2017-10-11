@@ -46,23 +46,7 @@
 			},
 			"collectionBG": {
 				"value": [246, 247, 248, 1]
-			},
-			"buttonBG": {
-				"value": [46, 62, 72, 0.09]
-			},
-			"fieldBG": {
-				"value": [46, 62, 72, 0.03]
-			},
-			"fieldBGInverted": {
-				"value": [255, 255, 255, 0.2]
-			},
-			"fieldBG--disabled": {
-				"value": [46, 62, 72, 0.02]
-			},
-			"fieldBGinverted--disabled": {
-				"value": [255, 255, 255, 0.02]
 			}
-
 		}
 	}
 }
