@@ -2,7 +2,6 @@ const Handlebars = require('handlebars');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const helpers = require('./util/handlebarsHelpers');
-const jsHeader = require('./formats').jsHeader;
 
 /**
  * Generates static docs from JSON
