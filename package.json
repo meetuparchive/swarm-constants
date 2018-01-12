@@ -1,6 +1,6 @@
 {
   "name": "swarm-constants",
-  "version": "0.0.1",
+  "version": "1.2.47-beta",
   "description": "UI Constants for Meetup's Swarm Design System",
   "directories": {
     "dist": "dist"
