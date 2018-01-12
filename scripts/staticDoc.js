@@ -16,7 +16,13 @@ const helpers = require('./util/handlebarsHelpers');
 
 const SRC_DIR = './properties/color/';
 const DEST_DIR = './dist/doc/color/';
+const JS_DIST_DIR = './dist/js/';
 const templatePath = './templates/color/index.hbs';
+
+const distHeader = '/**\n' +
+	' * Do not edit directly\n' +
+	' * Generated on ' + new Date() + '\n' +
+	' */\n\n';
 
 // add custom helpers to Handlebars
 helpers
@@ -80,9 +86,22 @@ exports.build = () => {
 			context.categories.push(getColorType(f));
 		});
 
+	// add "colorMeta" to JS dist
+	const colorMetaContent = distHeader +
+		'module.exports = [\n' +
+		JSON.stringify(context, null, 2) +
+		'\n];';
+
+	fs.writeFileSync(
+		`${JS_DIST_DIR}colorMeta.js`,
+		colorMetaContent
+	);
+
+	// documentation dist
 	if (!fs.existsSync(DEST_DIR)) {
 		mkdirp.sync(DEST_DIR);
 	}
+
 	fs.writeFileSync(
 		`${DEST_DIR}index.html`,
 		template(context)
