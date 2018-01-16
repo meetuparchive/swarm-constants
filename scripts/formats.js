@@ -20,7 +20,7 @@ const commonJS = {
 const colorAttributes = {
 	name: 'javascript/colorAttributes',
 	formatter: (dictionary, platform) => jsHeader() +
-		'module.exports = [\n' +
+		'module.exports = ' +
 			JSON.stringify(
 				dictionary
 					.allProperties
@@ -28,7 +28,7 @@ const colorAttributes = {
 				null,
 				2
 			) +
-		'\n];'
+		';'
 };
 
 module.exports = [
