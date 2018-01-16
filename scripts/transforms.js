@@ -1,5 +1,6 @@
 const Color = require('tinycolor2');
 const getRgbaString = require('./util/getRgbaString');
+const SD_transforms = require('../node_modules/style-dictionary/lib/common/transforms');
 
 /**
  * @param {String} s
@@ -104,9 +105,10 @@ const colorVarNames = {
 	type: 'attribute',
 	matcher: prop => prop.attributes.category === 'color',
 	description: 'Adds varName properties to dictionary properties (e.g. "$C_colorname", "var(--color-colorname")',
-	transformer: (prop) => (
+	transformer: (prop, options) => (
 		{
 			colorVarNames: {
+				android: SD_transforms['name/cti/snake'].transformer(prop, options),
 				sass: `$${prefixC.transformer(prop)}`,
 				js: jsConstant.transformer(prop)
 			}
