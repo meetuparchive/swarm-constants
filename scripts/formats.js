@@ -17,6 +17,21 @@ const commonJS = {
 		.join('\n')
 };
 
+const colorAttributes = {
+	name: 'javascript/colorAttributes',
+	formatter: (dictionary, platform) => jsHeader() +
+		'module.exports = [\n' +
+			JSON.stringify(
+				dictionary
+					.allProperties
+					.filter(p => p.attributes.category === "color"),
+				null,
+				2
+			) +
+		'\n];'
+};
+
 module.exports = [
 	commonJS,
+	colorAttributes
 ];

@@ -1,6 +1,20 @@
 {
 	"source": ["./properties/color/*.json"],
 	"platforms": {
+		"colorDoc": {
+			"transforms": [
+				"attribute/cti",
+				"attribute/colorValues",
+				"attribute/colorVarNames"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "js/colorAttributes.js",
+					"format": "javascript/colorAttributes"
+				}
+			]
+		},
 		"js": {
 			"transforms": [
 				"attribute/cti",
