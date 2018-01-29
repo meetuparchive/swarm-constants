@@ -29,6 +29,20 @@
 				}
 			]
 		},
+		"customProperties": {
+			"transforms": [
+				"attribute/cti",
+				"name/cti/customProperty",
+				"color/optimizedRGBA"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "css/customProperties.scss",
+					"format": "css/customProperties"
+				}
+			]
+		},
 		"scss": {
 			"transforms": [
 				"attribute/cti",

@@ -59,6 +59,20 @@ const prefixC = {
 		: `C_${prop.attributes.item}`
 };
 
+
+//
+// Name transform
+// converts "cti" object structure to css custom property `--[type]-[colorName]`
+//
+const customProperty = {
+	name: 'name/cti/customProperty',
+	type: 'name',
+	transformer: (prop, options) => prop.attributes.type === 'text' ?
+		`${prop.attributes.category}-text${capitalizeFirstLetter(prop.attributes.item)}`
+		: `${prop.attributes.category}-${prop.attributes.item}`
+};
+
+
 //
 // Name transform
 // converts "cti" object structure to valid js var `C_COLOR_NAME`
@@ -121,6 +135,7 @@ const colorVarNames = {
 module.exports = [
 	optimizedRGBA,
 	androidHex8,
+	customProperty,
 	prefixC,
 	jsConstant,
 	colorValues,
