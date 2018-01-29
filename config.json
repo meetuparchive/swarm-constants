@@ -38,7 +38,7 @@
 			"buildPath": "./dist/",
 			"files": [
 				{
-					"destination": "css/customProperties.scss",
+					"destination": "css/customProperties.css",
 					"format": "css/customProperties"
 				}
 			]
