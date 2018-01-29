@@ -1,5 +1,5 @@
 {
-	"source": ["./properties/color/*.json"],
+	"source": ["./properties/**/*.json"],
 	"platforms": {
 		"colorDoc": {
 			"transforms": [
@@ -15,7 +15,7 @@
 				}
 			]
 		},
-		"js": {
+		"jsColors": {
 			"transforms": [
 				"attribute/cti",
 				"name/cti/jsConstant",
@@ -38,12 +38,24 @@
 			"buildPath": "./dist/",
 			"files": [
 				{
-					"destination": "css/customProperties.scss",
+					"destination": "css/customProperties.css",
 					"format": "css/customProperties"
 				}
 			]
 		},
-		"scss": {
+		"responsiveCustomProperties": {
+			"trasnforms": [
+				"attribute/cti"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "css/responsiveProperties.css",
+					"format": "css/responsiveProperties"
+				}
+			]
+		},
+		"scssColors": {
 			"transforms": [
 				"attribute/cti",
 				"name/cti/prefixC",
@@ -57,7 +69,7 @@
 				}
 			]
 		},
-		"android": {
+		"androidColors": {
 			"transforms": [
 				"attribute/cti",
 				"name/cti/snake",

@@ -4,44 +4,44 @@
 
 			"xs": {
 				"value": {
-					"default" : 16,
-					"atMedium": 18,
-					"atLarge" : 20
+					"default" : "16px",
+					"atMedium": "18px",
+					"atLarge" : "20px"
 				}
 			},
 			"s": {
 				"value": {
-					"default" : 24,
-					"atMedium": 27,
-					"atLarge" : 30
+					"default" : "24px",
+					"atMedium": "27px",
+					"atLarge" : "30px"
 				}
 			},
 			"m": {
 				"value": {
-					"default" : 36,
-					"atMedium": 40,
-					"atLarge" : 45
+					"default" : "36px",
+					"atMedium": "40px",
+					"atLarge" : "45px"
 				}
 			},
 			"l": {
 				"value": {
-					"default" : 48,
-					"atMedium": 54,
-					"atLarge" : 60
+					"default" : "48px",
+					"atMedium": "54px",
+					"atLarge" : "60px"
 				}
 			},
 			"xl": {
 				"value": {
-					"default" : 72,
-					"atMedium": 81,
-					"atLarge" : 90
+					"default" : "72px",
+					"atMedium": "81px",
+					"atLarge" : "90px"
 				}
 			},
 			"xxl": {
 				"value": {
-					"default" : 120,
-					"atMedium": 135,
-					"atLarge" : 150
+					"default" : "120px",
+					"atMedium": "135px",
+					"atLarge" : "150px"
 				}
 			}
 
