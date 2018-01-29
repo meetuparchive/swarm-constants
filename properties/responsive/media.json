@@ -1,0 +1,50 @@
+{
+	"responsive": {
+		"media": {
+
+			"xs": {
+				"value": {
+					"default" : 16,
+					"atMedium": 18,
+					"atLarge" : 20
+				}
+			},
+			"s": {
+				"value": {
+					"default" : 24,
+					"atMedium": 27,
+					"atLarge" : 30
+				}
+			},
+			"m": {
+				"value": {
+					"default" : 36,
+					"atMedium": 40,
+					"atLarge" : 45
+				}
+			},
+			"l": {
+				"value": {
+					"default" : 48,
+					"atMedium": 54,
+					"atLarge" : 60
+				}
+			},
+			"xl": {
+				"value": {
+					"default" : 72,
+					"atMedium": 81,
+					"atLarge" : 90
+				}
+			},
+			"xxl": {
+				"value": {
+					"default" : 120,
+					"atMedium": 135,
+					"atLarge" : 150
+				}
+			}
+
+		}
+	}
+}
