@@ -43,18 +43,6 @@
 				}
 			]
 		},
-		"responsiveCustomProperties": {
-			"trasnforms": [
-				"attribute/cti"
-			],
-			"buildPath": "./dist/",
-			"files": [
-				{
-					"destination": "css/responsiveProperties.css",
-					"format": "css/responsiveProperties"
-				}
-			]
-		},
 		"scssColors": {
 			"transforms": [
 				"attribute/cti",

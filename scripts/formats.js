@@ -7,39 +7,45 @@ const path = require('path');
  */
 
 
-// template for responsive custom properties format
-const templ_responsiveProperties = (ctx) => {
-	const bp = JSON.parse(
+// template for custom properties format
+const templ_customProperties = (ctx) => {
+	const bpProperties = JSON.parse(
 			fs.readFileSync(
 				path.join(__dirname, '..', 'properties', 'layout', 'breakpoints.json')
 			)
 		);
 
-	const getCustomProperties = (size) =>
-		ctx.properties
-			.map(p => `--${p.path[1]}-${p.name}: ${p.value[size]};`)
-			.join('\n\t');
+	const getCustomProperties = (list, size) => list
+		.map(p => `${p.name}: ${size ? p.value[size] : p.value};`)
+		.join('\n\t');
 
 	const getMQ = (size) =>
-		`only screen and (min-width: ${bp.layout.breakpoints[size].value})`;
+		`only screen and (min-width: ${bpProperties.layout.breakpoint[size].value})`;
+
+	const standardItems = ctx
+		.filter(p => !p.path.includes('responsive') );
+
+	const responsiveItems = ctx
+		.filter(p => p.path.includes('responsive') );
 
 
 	return `
 :root {
-	${getCustomProperties('default')}
+	${getCustomProperties(standardItems)}
+	${getCustomProperties(responsiveItems, 'default')}
 }
 
 /* Medium breakpoint overrides */
 @media ${getMQ('m')} {
 	:root {
-		${getCustomProperties('atMedium')}
+		${getCustomProperties(responsiveItems, 'atMedium')}
 	}
 }
 
 /* Large breakpoint overrides */
 @media ${getMQ('l')} {
 	:root {
-		${getCustomProperties('atLarge')}
+		${getCustomProperties(responsiveItems, 'atLarge')}
 	}
 }
 `;
@@ -63,22 +69,7 @@ const commonJS = {
 const customProperties = {
 	name: 'css/customProperties',
 	formatter: (dictionary, platform) => dateHeader() +
-		'\n:root {\n' +
-		dictionary
-			.allProperties
-			.map(p => `\t--${p.name}: ${p.value};`)
-			.join('\n') +
-		'\n}'
-};
-
-const responsiveProperties = {
-	name: 'css/responsiveProperties',
-	formatter: (dictionary, platform) => dateHeader() +
-		templ_responsiveProperties({
-			properties: dictionary
-				.allProperties
-				.filter( p => p.path.includes('responsive') )
-		})
+		templ_customProperties(dictionary.allProperties)
 };
 
 const colorAttributes = {
@@ -105,6 +96,5 @@ const colorAttributes = {
 module.exports = [
 	commonJS,
 	customProperties,
-	responsiveProperties,
 	colorAttributes
 ];
