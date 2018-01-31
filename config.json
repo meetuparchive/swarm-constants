@@ -53,7 +53,7 @@
 			"files": [
 				{
 					"destination": "scss/_colors.scss",
-					"format": "scss/variables"
+					"format": "scss/colorVariables"
 				}
 			]
 		},

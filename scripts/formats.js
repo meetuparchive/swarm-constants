@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const SD_scssFormat = require('../node_modules/style-dictionary/lib/common/formats')['scss/variables'];
 
 /**
  * StyleDictionary custom formats
@@ -28,12 +29,14 @@ const dateHeader = () =>
 
 
 // commonJS module format
+// (!) "color" category only
 //
 // adds every dictionary property to exports
 const commonJS = {
 	name: 'javascript/commonJS',
-	formatter: (dictionary, platform) => dateHeader() + dictionary
+	formatter: (dictionary) => dateHeader() + dictionary
 		.allProperties
+		.filter(prop => prop.attributes.category === "color")
 		.map(prop => `exports.${prop.name} = '${prop.value}';`)
 		.join('\n')
 };
@@ -100,6 +103,7 @@ const customProperties = {
 };
 
 // Color attributes format (JS)
+// (!) "color" category only
 //
 // creates a javascript file that exports a list
 // of objects containing meta info for each
@@ -125,8 +129,25 @@ const colorAttributes = {
 		';'
 };
 
+// Sass color variables format (SCSS)
+// (!) "color" category only
+//
+// Filters dictionary to produce only color
+// variables for our Sass distributution
+const scssColorVariables = {
+	name: 'scss/colorVariables',
+	formatter: (dictionary, platform) => {
+		dictionary.allProperties = dictionary.allProperties
+			.filter(p => p.attributes.category === "color");
+
+		return SD_scssFormat(dictionary);
+	}
+};
+
+
 module.exports = [
 	commonJS,
 	customProperties,
-	colorAttributes
+	colorAttributes,
+	scssColorVariables
 ];
