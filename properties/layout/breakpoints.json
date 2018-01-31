@@ -1,0 +1,20 @@
+{
+	"layout": {
+		"breakpoint": {
+
+			"s": {
+				"value": "440px"
+			},
+			"m": {
+				"value": "640px"
+			},
+			"l": {
+				"value": "840px"
+			},
+			"xl": {
+				"value": "1024px"
+			}
+
+		}
+	}
+}
