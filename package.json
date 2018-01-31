@@ -13,15 +13,11 @@
   "author": "adamd@meetup.com",
   "license": "MIT",
   "devDependencies": {
+    "@alrra/travis-scripts": "^3.0.1",
     "eslint": "^4.1.1",
     "eslint-plugin-json": "^1.2.0",
     "handlebars": "^4.0.10",
     "style-dictionary": "^2.0.0-beta",
     "tinycolor2": "^1.4.1"
-  },
-  "dependencies": {
-    "@alrra/travis-scripts": "^3.0.1",
-    "gh-pages": "^1.0.0",
-    "mkdirp": "^0.5.1"
   }
 }
