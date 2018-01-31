@@ -6,51 +6,20 @@ const path = require('path');
  * https://amzn.github.io/style-dictionary/formats_and_templates
  */
 
+// load and keep breakpoint values in memory
+// for responsive var value output
+const bpProperties = JSON.parse(
+		fs.readFileSync(
+			path.join(__dirname, '..', 'properties', 'layout', 'breakpoints.json')
+		)
+	);
 
-// template for custom properties format
-const templ_customProperties = (ctx) => {
-	const bpProperties = JSON.parse(
-			fs.readFileSync(
-				path.join(__dirname, '..', 'properties', 'layout', 'breakpoints.json')
-			)
-		);
+// get media query string from size keyword
+// (e.g. 's', 'm', 'l')
+const getMQBySize = (size) =>
+	`only screen and (min-width: ${bpProperties.layout.breakpoint[size].value})`;
 
-	const getCustomProperties = (list, size) => list
-		.map(p => `${p.name}: ${size ? p.value[size] : p.value};`)
-		.join('\n\t');
-
-	const getMQ = (size) =>
-		`only screen and (min-width: ${bpProperties.layout.breakpoint[size].value})`;
-
-	const standardItems = ctx
-		.filter(p => !p.path.includes('responsive') );
-
-	const responsiveItems = ctx
-		.filter(p => p.path.includes('responsive') );
-
-
-	return `
-:root {
-	${getCustomProperties(standardItems)}
-	${getCustomProperties(responsiveItems, 'default')}
-}
-
-/* Medium breakpoint overrides */
-@media ${getMQ('m')} {
-	:root {
-		${getCustomProperties(responsiveItems, 'atMedium')}
-	}
-}
-
-/* Large breakpoint overrides */
-@media ${getMQ('l')} {
-	:root {
-		${getCustomProperties(responsiveItems, 'atLarge')}
-	}
-}
-`;
-};
-
+// generated content warning for top of files
 const dateHeader = () =>
 	  '/**\n' +
 		' * Do not edit directly\n' +
@@ -58,6 +27,9 @@ const dateHeader = () =>
 		' */\n\n';
 
 
+// commonJS module format
+//
+// adds every dictionary property to exports
 const commonJS = {
 	name: 'javascript/commonJS',
 	formatter: (dictionary, platform) => dateHeader() + dictionary
@@ -66,12 +38,72 @@ const commonJS = {
 		.join('\n')
 };
 
+// CSS Custom properties format
+//
+// There is some extra complexity here due to support
+// for responsive custom properties. A "responsive"
+// custom property has a different value at medium
+// and large breakpoints. These properties are assigned
+// a default value in `:root` with overrides scoped
+// to media queries.
+//
+// A "standard" custom property has only one value,
+// and can be assigned in `:root` just once.
 const customProperties = {
 	name: 'css/customProperties',
-	formatter: (dictionary, platform) => dateHeader() +
-		templ_customProperties(dictionary.allProperties)
+	formatter: (dictionary) => {
+		const { allProperties } = dictionary;
+		const lineTab = '\n\t';
+		const isResponsiveProp = (p) => p.path.includes('responsive');
+		const toCSSRule = (prop, size) => size ?
+			`${prop.name}: ${prop.value[size]};`
+			: `${prop.name}: ${prop.value};`;
+
+		return dateHeader() + `
+/* Default values */
+:root {
+	${allProperties
+		.filter(p => !isResponsiveProp(p))
+		.map(p => toCSSRule(p))
+		.join(lineTab)
+	}
+	${allProperties
+		.filter(p => isResponsiveProp(p))
+		.map(p => toCSSRule(p, 'default'))
+		.join(lineTab)
+	}
+}
+
+/* Medium breakpoint overrides */
+@media ${getMQBySize('m')} {
+	:root {
+		${allProperties
+			.filter(p => isResponsiveProp(p))
+			.map(p => toCSSRule(p, 'atMedium'))
+			.join(lineTab + '\t')
+		}
+	}
+}
+
+/* Large breakpoint overrides */
+@media ${getMQBySize('l')} {
+	:root {
+		${allProperties
+			.filter(p => isResponsiveProp(p))
+			.map(p => toCSSRule(p, 'atLarge'))
+			.join(lineTab + '\t')
+		}
+	}
+}
+`
+	}
 };
 
+// Color attributes format (JS)
+//
+// creates a javascript file that exports a list
+// of objects containing meta info for each
+// dictionary property
 const colorAttributes = {
 	name: 'javascript/colorAttributes',
 	formatter: (dictionary, platform) => dateHeader() +
