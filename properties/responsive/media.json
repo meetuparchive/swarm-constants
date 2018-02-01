@@ -1,0 +1,50 @@
+{
+	"responsive": {
+		"media": {
+
+			"xs": {
+				"value": {
+					"default" : "16px",
+					"atMedium": "18px",
+					"atLarge" : "20px"
+				}
+			},
+			"s": {
+				"value": {
+					"default" : "24px",
+					"atMedium": "27px",
+					"atLarge" : "30px"
+				}
+			},
+			"m": {
+				"value": {
+					"default" : "36px",
+					"atMedium": "40px",
+					"atLarge" : "45px"
+				}
+			},
+			"l": {
+				"value": {
+					"default" : "48px",
+					"atMedium": "54px",
+					"atLarge" : "60px"
+				}
+			},
+			"xl": {
+				"value": {
+					"default" : "72px",
+					"atMedium": "81px",
+					"atLarge" : "90px"
+				}
+			},
+			"xxl": {
+				"value": {
+					"default" : "120px",
+					"atMedium": "135px",
+					"atLarge" : "150px"
+				}
+			}
+
+		}
+	}
+}

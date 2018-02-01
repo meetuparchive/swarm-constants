@@ -67,9 +67,22 @@ const prefixC = {
 const customProperty = {
 	name: 'name/cti/customProperty',
 	type: 'name',
-	transformer: (prop, options) => prop.attributes.type === 'text' ?
-		`${prop.attributes.category}-text${capitalizeFirstLetter(prop.attributes.item)}`
-		: `${prop.attributes.category}-${prop.attributes.item}`
+	transformer: (prop, options) => {
+		const category = prop.attributes.category;
+		const type = prop.attributes.type;
+		const item = prop.attributes.item;
+
+		switch(`${category}/${type}`) {
+			case 'color/text':
+				return `--${category}-text${capitalizeFirstLetter(item)}`;
+			case 'layout/breakpoint':
+				return `--${type}-${item}`;
+			case 'responsive/media':
+				return `--${type}-${item}`;
+			default:
+				return `--${category}-${item}`;
+		}
+	}
 };
 
 
