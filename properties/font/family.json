@@ -1,0 +1,14 @@
+{
+	"font": {
+		"family": {
+
+			"normal": {
+				"value": "'Graphik Meetup', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif"
+			},
+			"mono": {
+				"value": "Monaco, 'Andale Mono', 'Courier New', monospace"
+			}
+
+		}
+	}
+}

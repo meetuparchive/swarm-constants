@@ -72,15 +72,38 @@ const customProperty = {
 		const type = prop.attributes.type;
 		const item = prop.attributes.item;
 
+		const PATTERN_CTI = `--${category}-${type}-${item}`;
+		const PATTERN_CI = `--${category}-${item}`;
+		const PATTERN_TI = `--${type}-${item}`;
+
+		// TODO: clean this up as we settle on naming conventions
 		switch(`${category}/${type}`) {
+			case 'color/base':
+				return PATTERN_CI;
+			case 'color/external':
+				return PATTERN_CI;
+			case 'color/ui':
+				return PATTERN_CI;
 			case 'color/text':
 				return `--${category}-text${capitalizeFirstLetter(item)}`;
 			case 'layout/breakpoint':
-				return `--${type}-${item}`;
+				return PATTERN_TI;
+			case 'layout/width':
+				return PATTERN_TI;
+			case 'layout/radius':
+				return PATTERN_TI;
+			case 'layout/block':
+				return PATTERN_TI;
+			case 'layout/space':
+				return PATTERN_TI;
+			case 'layout/zindex':
+				return PATTERN_TI;
 			case 'responsive/media':
-				return `--${type}-${item}`;
+				return PATTERN_TI;
+			case 'responsive/space':
+				return `--${item}`;
 			default:
-				return `--${category}-${item}`;
+				return PATTERN_CTI;
 		}
 	}
 };
