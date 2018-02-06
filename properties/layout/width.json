@@ -1,0 +1,17 @@
+{
+	"layout": {
+		"width": {
+
+			"modal": {
+				"value": "440px"
+			},
+			"bounds": {
+				"value": "840px"
+			},
+			"bounds-wide": {
+				"value": "1100px"
+			}
+
+		}
+	}
+}

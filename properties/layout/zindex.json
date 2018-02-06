@@ -1,0 +1,26 @@
+{
+	"layout": {
+		"zindex": {
+
+			"main": {
+				"value": "0"
+			},
+			"floatingContent": {
+				"value": "10"
+			},
+			"shade": {
+				"value": "20"
+			},
+			"shadeContent": {
+				"value": "25"
+			},
+			"modal": {
+				"value": "30"
+			},
+			"popup": {
+				"value": "50"
+			}
+
+		}
+	}
+}

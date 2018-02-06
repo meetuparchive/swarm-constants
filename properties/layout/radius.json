@@ -1,0 +1,17 @@
+{
+	"layout": {
+		"radius": {
+
+			"small": {
+				"value": "2px"
+			},
+			"normal": {
+				"value": "4px"
+			},
+			"large": {
+				"value": "8px"
+			}
+
+		}
+	}
+}

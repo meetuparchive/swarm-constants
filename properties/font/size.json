@@ -1,0 +1,32 @@
+{
+	"font": {
+		"size": {
+
+			"tiny": {
+				"value": "12px"
+			},
+			"small": {
+				"value": "14px"
+			},
+			"normal": {
+				"value": "16px"
+			},
+			"big": {
+				"value": "24px"
+			},
+			"display3": {
+				"value": "28px"
+			},
+			"display2": {
+				"value": "34px"
+			},
+			"display1": {
+				"value": "42px"
+			},
+			"title": {
+				"value": "32px"
+			}
+
+		}
+	}
+}
