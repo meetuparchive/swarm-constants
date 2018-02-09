@@ -1,0 +1,15 @@
+{
+	"responsive": {
+		"space": {
+
+			"gutter": {
+				"value": {
+					"default" : "16px",
+					"atMedium": "18px",
+					"atLarge" : "20px"
+				}
+			}
+
+		}
+	}
+}

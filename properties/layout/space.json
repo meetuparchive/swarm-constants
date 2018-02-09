@@ -1,0 +1,38 @@
+{
+	"layout": {
+		"space": {
+
+			"1": {
+				"value": "16px"
+			},
+			"2": {
+				"value": "24px"
+			},
+			"3": {
+				"value": "36px"
+			},
+			"4": {
+				"value": "56px"
+			},
+			"5": {
+				"value": "80px"
+			},
+			"6": {
+				"value": "120px"
+			},
+			"7": {
+				"value": "184px"
+			},
+			"8": {
+				"value": "280px"
+			},
+			"double": {
+				"value": "32px"
+			},
+			"quarter": {
+				"value": "4px"
+			}
+
+		}
+	}
+}

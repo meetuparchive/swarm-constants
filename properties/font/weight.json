@@ -1,0 +1,17 @@
+{
+	"font": {
+		"weight": {
+
+			"normal": {
+				"value": "400"
+			},
+			"medium": {
+				"value": "500"
+			},
+			"bold": {
+				"value": "600"
+			}
+
+		}
+	}
+}
