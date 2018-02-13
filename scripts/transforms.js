@@ -75,8 +75,8 @@ const customProperty = {
 		} = prop.attributes;
 
 		const patterns = {
-			color: `--${c.slice(0,1)}-${i}`,
-			textColor: `--${c.slice(0,1)}-text${capitalizeFirstLetter(i)}`,
+			color: `--c-${i}`,
+			textColor: `--c-text${capitalizeFirstLetter(i)}`,
 			CTI: `--${c}-${t}-${i}`,
 			TI: `--${t}-${i}`,
 			CT: `--${c}-${t}`,
