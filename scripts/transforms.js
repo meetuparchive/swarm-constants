@@ -68,43 +68,36 @@ const customProperty = {
 	name: 'name/cti/customProperty',
 	type: 'name',
 	transformer: (prop, options) => {
-		const category = prop.attributes.category;
-		const type = prop.attributes.type;
-		const item = prop.attributes.item;
+		const {
+			category: c,
+			type: t,
+			item: i,
+		} = prop.attributes;
 
-		const PATTERN_CTI = `--${category}-${type}-${item}`;
-		const PATTERN_CI = `--${category}-${item}`;
-		const PATTERN_TI = `--${type}-${item}`;
+		const patterns = {
+			color: `--c-${i}`,
+			textColor: `--c-text${capitalizeFirstLetter(i)}`,
+			CTI: `--${c}-${t}-${i}`,
+			TI: `--${t}-${i}`,
+			CT: `--${c}-${t}`,
+		};
 
-		// TODO: clean this up as we settle on naming conventions
-		switch(`${category}/${type}`) {
-			case 'color/base':
-				return PATTERN_CI;
-			case 'color/external':
-				return PATTERN_CI;
-			case 'color/ui':
-				return PATTERN_CI;
-			case 'color/text':
-				return `--${category}-text${capitalizeFirstLetter(item)}`;
-			case 'layout/breakpoint':
-				return PATTERN_TI;
-			case 'layout/width':
-				return PATTERN_TI;
-			case 'layout/radius':
-				return PATTERN_TI;
-			case 'layout/block':
-				return PATTERN_TI;
-			case 'layout/space':
-				return PATTERN_TI;
-			case 'layout/zindex':
-				return PATTERN_TI;
-			case 'responsive/media':
-				return PATTERN_TI;
-			case 'responsive/space':
-				return `--${item}`;
+		let name;
+		switch(c) {
+			case 'color':
+				name = (t === 'text') ? patterns.textColor : patterns.color
+				break;
+			case 'layout':
+				name = patterns.TI;
+				break;
+			case 'responsive':
+				name = (t === 'media') ? patterns.TI : patterns.CT;
+				break;
 			default:
-				return PATTERN_CTI;
+				name = patterns.CTI;
 		}
+
+		return name;
 	}
 };
 
