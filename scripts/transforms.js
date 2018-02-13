@@ -72,20 +72,22 @@ const customProperty = {
 		const type = prop.attributes.type;
 		const item = prop.attributes.item;
 
+		const PATTERN_COLOR = `--${category.slice(0,1)}-${item}`;
 		const PATTERN_CTI = `--${category}-${type}-${item}`;
 		const PATTERN_CI = `--${category}-${item}`;
+		const PATTERN_CT = `--${category}-${type}`;
 		const PATTERN_TI = `--${type}-${item}`;
 
 		// TODO: clean this up as we settle on naming conventions
 		switch(`${category}/${type}`) {
 			case 'color/base':
-				return PATTERN_CI;
+				return PATTERN_COLOR;
 			case 'color/external':
-				return PATTERN_CI;
+				return PATTERN_COLOR;
 			case 'color/ui':
-				return PATTERN_CI;
+				return PATTERN_COLOR;
 			case 'color/text':
-				return `--${category}-text${capitalizeFirstLetter(item)}`;
+				return `--${category.slice(0,1)}-text${capitalizeFirstLetter(item)}`;
 			case 'layout/breakpoint':
 				return PATTERN_TI;
 			case 'layout/width':
@@ -101,7 +103,7 @@ const customProperty = {
 			case 'responsive/media':
 				return PATTERN_TI;
 			case 'responsive/space':
-				return `--${item}`;
+				return PATTERN_CT;
 			default:
 				return PATTERN_CTI;
 		}
