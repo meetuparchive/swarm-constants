@@ -2,7 +2,7 @@
 	"responsive": {
 		"space": {
 
-			"gutter": {
+			"1": {
 				"value": {
 					"default" : "16px",
 					"atMedium": "18px",
