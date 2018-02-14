@@ -15,6 +15,20 @@
 				}
 			]
 		},
+		"variableDoc": {
+			"transforms": [
+				"attribute/cti",
+				"name/cti/customProperty",
+				"color/optimizedRGBA"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "doc/variableDoc/customProperties/index.html",
+					"template": "staticDocs"
+				}
+			]
+		},
 		"jsColors": {
 			"transforms": [
 				"attribute/cti",
