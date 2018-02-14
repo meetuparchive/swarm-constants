@@ -26,6 +26,9 @@
 			"8": {
 				"value": "280px"
 			},
+			"half": {
+				"value": "8px"
+			},
 			"double": {
 				"value": "32px"
 			},
