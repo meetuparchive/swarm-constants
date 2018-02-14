@@ -1,0 +1,188 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>swarm-constants - CSS custom properties</title>
+	<style type="text/css">
+		:root {
+			--minFontSize: 16;
+			--maxFontSize: 22;
+			--c-border: rgba(0,0,0,.12);
+		}
+
+		html {
+			font-size: calc(var(--minFontSize)*1px);
+			font-family: 'Graphik', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+			line-height: 1.5;
+		}
+
+		@media (min-width: 400px) {
+		  html {
+			font-size: calc(
+				calc(var(--minFontSize)*1px) +
+				calc((var(--maxFontSize) - var(--minFontSize))) *
+				(100vw - 400px) / (1200 - 400)
+			);
+		  }
+		}
+		@media (min-width: 1200px) {
+		  html {
+			font-size: calc(var(--maxFontSize)*1px);
+		  }
+		}
+
+		body {
+			margin: 0;
+		}
+
+		ul {
+			margin-left: 0;
+			padding-left: 0;
+			list-style-type: none;
+		}
+
+		ul li {
+			padding-bottom: .667rem;
+		}
+
+		table {
+			border-collapse: collapse;
+			display: table;
+			font-size: 1rem;
+			table-layout: auto;
+			width: 100%;
+		}
+
+		td,
+		th {
+			color: rgba(0,0,0,.87);
+			padding: 1rem;
+			text-align: left;
+			vertical-align: top;
+			width: 50%;
+		}
+
+		thead {
+			border-bottom: 1px solid var(--c-border);
+		}
+
+		thead th {
+			color: rgba(0,0,0,.6);
+			font-size: .667rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: calc(1em / 6);
+		}
+
+		tbody tr:nth-child(odd) td,
+		tbody tr:nth-child(odd) th {
+			background-color: rgb(246, 247, 248);
+		}
+
+		.bounds {
+			margin: 0 auto;
+			max-width: 1000px;
+			width: 100%;
+		}
+
+		.section {
+			border-bottom: 1px solid var(--c-border);
+			padding: 5vmin 0;
+		}
+
+		.section:last-child {
+			border-bottom: 0;
+		}
+
+		.text--sectionTitle {
+			font-size: 2.25rem;
+			margin: 0;
+			padding: 0 0 1rem 1rem;
+			text-transform: capitalize;
+		}
+
+		.text--mono {
+			font-family: Monaco, "Andale Mono", "Courier New", monospace;
+		}
+
+		.codeBox {
+			background-color: rgba(41, 77, 107, 0.08);
+			border-radius: 6px;
+			padding: .125rem .25rem;
+		}
+
+		.responsiveValues {
+			align-items: center;
+			display: grid;
+			grid-gap: .25rem;
+			grid-template-columns: max-content min-content;
+		}
+
+		.tableWrapper {
+			flex-grow: 1;
+		}
+
+		@media (min-width: 800px) {
+			.flex {
+				display: flex;
+			}
+
+			.text--sectionTitle {
+				align-self: flex-start;
+				position: sticky;
+				top: 1rem;
+				transform: rotate(180deg);
+				writing-mode: vertical-rl;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<% const properties = allProperties;
+		let newObj;
+
+		const categorizedProperties = properties.reduce((acc, curr) => {
+			acc[curr.attributes.category] = acc[curr.attributes.category] || [];
+			acc[curr.attributes.category].push(curr);
+
+			newObj = acc;
+			return newObj;
+		}, Object.create(null));
+
+		Object.keys(categorizedProperties).map((category) => { %>
+			<section class="section">
+				<div class="bounds"><div class="flex">
+					<div><h2 class="text--sectionTitle"><%= category %></h2></div>
+					<div class="tableWrapper"><table>
+						<thead>
+							<tr>
+								<th>Property name</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% _.each(categorizedProperties[category], (property) => {
+								const { name, value } = property; %>
+								<tr>
+									<td class="text--mono"><%= name %></td>
+									<td>
+										<% if(typeof value === 'object') { %>
+											<div class="responsiveValues">
+												<% Object.keys(value).map((sizeKey) => { %>
+													<span><%= sizeKey %>:</span>
+													<span class="codeBox text--mono"><%= value[sizeKey] %></span>
+												<% }) %>
+											</div>
+										<% } else { %>
+											<span class="codeBox text--mono"><%= value %></span>
+										<% } %>
+									</td>
+								</tr>
+							<% }) %>
+						</tbody>
+					</table></div>
+				</div></div>
+			</section>
+		<% });%>
+</body>
+</html>
