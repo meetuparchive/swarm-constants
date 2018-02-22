@@ -153,7 +153,8 @@ const colorVarNames = {
 			colorVarNames: {
 				android: SD_transforms['name/cti/snake'].transformer(prop, options),
 				sass: `$${prefixC.transformer(prop)}`,
-				js: jsConstant.transformer(prop)
+				js: jsConstant.transformer(prop),
+				customProperty: customProperty.transformer(prop)
 			}
 		}
 	)
