@@ -102,6 +102,23 @@ const customProperties = {
 	}
 };
 
+// SCSS Custom properties dist that includes mapping
+// legacy color vars to custom properties
+//
+const scssCustomProperties = {
+	name: 'scss/customProperties',
+	formatter: (dictionary) =>
+		customProperties.formatter(dictionary) +
+		'\n/* Map legacy Sass vars to custom properties */\n' +
+		dictionary
+			.allProperties
+			.filter(p => p.attributes.category === "color")
+			.map(p =>
+				`${p.attributes.colorVarNames.sass}: var(${p.attributes.colorVarNames.customProperty});`
+			)
+			.join('\n')
+};
+
 // Color attributes format (JS)
 // (!) "color" category only
 //
@@ -136,12 +153,11 @@ const colorAttributes = {
 // variables for our Sass distributution
 const scssColorVariables = {
 	name: 'scss/colorVariables',
-	formatter: (dictionary, platform) => {
-		dictionary.allProperties = dictionary.allProperties
-			.filter(p => p.attributes.category === "color");
-
-		return SD_scssFormat(dictionary);
-	}
+	formatter: (dictionary) => SD_scssFormat(
+		dictionary
+			.allProperties
+			.filter(p => p.attributes.category === "color")
+	)
 };
 
 
@@ -149,5 +165,6 @@ module.exports = [
 	commonJS,
 	customProperties,
 	colorAttributes,
-	scssColorVariables
+	scssColorVariables,
+	scssCustomProperties
 ];
