@@ -57,6 +57,20 @@
 				}
 			]
 		},
+		"scssRawColors": {
+			"transforms": [
+				"attribute/cti",
+				"name/cti/prefixRaw",
+				"color/optimizedRGBA"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "scss/_rawColors.scss",
+					"format": "scss/colorVariables"
+				}
+			]
+		},
 		"scssCustomProperties": {
 			"transforms": [
 				"attribute/cti",

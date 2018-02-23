@@ -153,11 +153,12 @@ const colorAttributes = {
 // variables for our Sass distributution
 const scssColorVariables = {
 	name: 'scss/colorVariables',
-	formatter: (dictionary) => SD_scssFormat(
-		dictionary
-			.allProperties
-			.filter(p => p.attributes.category === "color")
-	)
+	formatter: (dictionary, platform) => {
+		dictionary.allProperties = dictionary.allProperties
+			.filter(p => p.attributes.category === "color");
+
+		return SD_scssFormat(dictionary);
+	}
 };
 
 

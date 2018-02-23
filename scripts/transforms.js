@@ -59,6 +59,21 @@ const prefixC = {
 		: `C_${prop.attributes.item}`
 };
 
+//
+// Name transform
+// converts "cti" object structure to sass `$RAW_[colorName]`
+// Enables users to make use of Sass or CSSNext polyfilled `color()`
+// function modification on a color.
+//
+const prefixRaw = {
+	name: 'name/cti/prefixRaw',
+	type: 'name',
+	matcher: prop => prop.attributes.category === 'color',
+	transformer: (prop, options) => prop.attributes.type === 'text' ?
+		`RAW_text${capitalizeFirstLetter(prop.attributes.item)}`
+		: `RAW_${prop.attributes.item}`
+};
+
 
 //
 // Name transform
@@ -167,6 +182,7 @@ module.exports = [
 	androidHex8,
 	customProperty,
 	prefixC,
+	prefixRaw,
 	jsConstant,
 	colorValues,
 	colorVarNames
