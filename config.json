@@ -43,7 +43,7 @@
 				}
 			]
 		},
-		"scssColors": {
+		"legacyScssColors": {
 			"transforms": [
 				"attribute/cti",
 				"name/cti/prefixC",
@@ -54,6 +54,36 @@
 				{
 					"destination": "scss/_colors.scss",
 					"format": "scss/colorVariables"
+				}
+			]
+		},
+		"scssRawColors": {
+			"transforms": [
+				"attribute/cti",
+				"name/cti/prefixRaw",
+				"color/optimizedRGBA"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "scss/_rawColors.scss",
+					"format": "scss/colorVariables"
+				}
+			]
+		},
+		"scssCustomProperties": {
+			"transforms": [
+				"attribute/cti",
+				"attribute/colorValues",
+				"attribute/colorVarNames",
+				"name/cti/customProperty",
+				"color/optimizedRGBA"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "scss/_customProperties.scss",
+					"format": "scss/customProperties"
 				}
 			]
 		},
