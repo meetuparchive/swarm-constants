@@ -14,5 +14,10 @@ FORMATS
 		StyleDictionary.registerFormat(f);
 	});
 
+StyleDictionary.registerTemplate({
+	name: 'staticDocs',
+	template: 'templates/variablesDoc/customProperties.html.template'
+});
+
 console.info('--------------------------\nBuilding distributions...');
 StyleDictionary.buildAllPlatforms();
