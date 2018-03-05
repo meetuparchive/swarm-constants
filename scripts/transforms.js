@@ -3,6 +3,49 @@ const getRgbaString = require('./util/getRgbaString');
 const SD_transforms = require('../node_modules/style-dictionary/lib/common/transforms');
 
 /**
+ * @function getNameWithWebConvention
+ * Name transform helper for SCSS and CSS
+ *
+ * @param {Object} prop - the dictionary property
+ * @param {String} colorPrefix - string to prefix color names (e.g. "C_" or "c-")
+ * @param {String} delimiter - delimiter for name parts
+ *
+ * @returns {String} - property name following web (scss, css) conventions
+ */
+const getNameWithWebConvention = (prop, delimiter, colorPrefix) => {
+	const {
+		category,
+		type,
+		item,
+	} = prop.attributes;
+
+	const patterns = {
+		color: `${colorPrefix}${item}`,
+		textColor: `${colorPrefix}text${capitalizeFirstLetter(item)}`,
+		CTI: `${category}-${type}-${item}`,
+		TI: `${type}-${item}`,
+		CT: `${category}-${type}`,
+	};
+
+	let name;
+	switch(category) {
+		case 'color':
+			name = (type === 'text') ? patterns.textColor : patterns.color
+			break;
+		case 'layout':
+			name = patterns.TI;
+			break;
+		case 'responsive':
+			name = (type === 'media') ? patterns.TI : patterns.CT;
+			break;
+		default:
+			name = patterns.CTI;
+	}
+
+	return name;
+};
+
+/**
  * @param {String} s
  * @returns {String} string with first letter capitalized
  */
@@ -46,33 +89,6 @@ const androidHex8 = {
 };
 
 
-//
-// Name transform
-// converts "cti" object structure to sass `$C_[colorName]`
-//
-const prefixC = {
-	name: 'name/cti/prefixC',
-	type: 'name',
-	matcher: prop => prop.attributes.category === 'color',
-	transformer: (prop, options) => prop.attributes.type === 'text' ?
-		`C_text${capitalizeFirstLetter(prop.attributes.item)}`
-		: `C_${prop.attributes.item}`
-};
-
-//
-// Name transform
-// converts "cti" object structure to sass `$RAW_[colorName]`
-// Enables users to make use of Sass or CSSNext polyfilled `color()`
-// function modification on a color.
-//
-const prefixRaw = {
-	name: 'name/cti/prefixRaw',
-	type: 'name',
-	matcher: prop => prop.attributes.category === 'color',
-	transformer: (prop, options) => prop.attributes.type === 'text' ?
-		`RAW_text${capitalizeFirstLetter(prop.attributes.item)}`
-		: `RAW_${prop.attributes.item}`
-};
 
 
 //
@@ -82,40 +98,19 @@ const prefixRaw = {
 const customProperty = {
 	name: 'name/cti/customProperty',
 	type: 'name',
-	transformer: (prop, options) => {
-		const {
-			category: c,
-			type: t,
-			item: i,
-		} = prop.attributes;
-
-		const patterns = {
-			color: `--c-${i}`,
-			textColor: `--c-text${capitalizeFirstLetter(i)}`,
-			CTI: `--${c}-${t}-${i}`,
-			TI: `--${t}-${i}`,
-			CT: `--${c}-${t}`,
-		};
-
-		let name;
-		switch(c) {
-			case 'color':
-				name = (t === 'text') ? patterns.textColor : patterns.color
-				break;
-			case 'layout':
-				name = patterns.TI;
-				break;
-			case 'responsive':
-				name = (t === 'media') ? patterns.TI : patterns.CT;
-				break;
-			default:
-				name = patterns.CTI;
-		}
-
-		return name;
-	}
+	transformer: (prop, options) => `--${getNameWithWebConvention(prop, '-', 'c-')}`
 };
 
+
+//
+// Name transform
+// converts "cti" object structure to css custom property `--[type]-[colorName]`
+//
+const scssVar = {
+	name: 'name/cti/scssVar',
+	type: 'name',
+	transformer: (prop, options) => getNameWithWebConvention(prop, '-', 'C_')
+};
 
 //
 // Name transform
@@ -167,9 +162,9 @@ const colorVarNames = {
 		{
 			colorVarNames: {
 				android: SD_transforms['name/cti/snake'].transformer(prop, options),
-				sass: `$${prefixC.transformer(prop)}`,
+				sass: `$${scssVar.transformer(prop)}`,
 				js: jsConstant.transformer(prop),
-				customProperty: customProperty.transformer(prop)
+				customProperty: `var(${customProperty.transformer(prop)})`
 			}
 		}
 	)
@@ -181,8 +176,7 @@ module.exports = [
 	optimizedRGBA,
 	androidHex8,
 	customProperty,
-	prefixC,
-	prefixRaw,
+	scssVar,
 	jsConstant,
 	colorValues,
 	colorVarNames

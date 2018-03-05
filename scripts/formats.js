@@ -102,23 +102,6 @@ const customProperties = {
 	}
 };
 
-// SCSS Custom properties dist that includes mapping
-// legacy color vars to custom properties
-//
-const scssCustomProperties = {
-	name: 'scss/customProperties',
-	formatter: (dictionary) =>
-		customProperties.formatter(dictionary) +
-		'\n/* Map legacy Sass vars to custom properties */\n' +
-		dictionary
-			.allProperties
-			.filter(p => p.attributes.category === "color")
-			.map(p =>
-				`${p.attributes.colorVarNames.sass}: var(${p.attributes.colorVarNames.customProperty});`
-			)
-			.join('\n')
-};
-
 // Color attributes format (JS)
 // (!) "color" category only
 //
@@ -146,6 +129,8 @@ const colorAttributes = {
 		';'
 };
 
+// DEPRECATED
+//
 // Sass color variables format (SCSS)
 // (!) "color" category only
 //
@@ -154,10 +139,26 @@ const colorAttributes = {
 const scssColorVariables = {
 	name: 'scss/colorVariables',
 	formatter: (dictionary, platform) => {
-		dictionary.allProperties = dictionary.allProperties
+		const allProperties = dictionary.allProperties
 			.filter(p => p.attributes.category === "color");
 
-		return SD_scssFormat(dictionary);
+		return SD_scssFormat({ allProperties });
+	}
+};
+
+// Sass variables format (SCSS)
+//
+// (!) does not emit items of "responsive" category
+//     as "responsive" items are handled in the custom
+//     properties CSS dist
+//
+const scssVariables = {
+	name: 'scss/variablesCustom',
+	formatter: (dictionary, platform) => {
+		const allProperties = dictionary.allProperties
+			.filter(p => p.attributes.category !== "responsive");
+
+		return SD_scssFormat({ allProperties });
 	}
 };
 
@@ -167,5 +168,5 @@ module.exports = [
 	customProperties,
 	colorAttributes,
 	scssColorVariables,
-	scssCustomProperties
+	scssVariables
 ];
