@@ -1,24 +1,10 @@
-const fs = require('fs');
-const path = require('path');
 const SD_scssFormat = require('../node_modules/style-dictionary/lib/common/formats')['scss/variables'];
+const customProperty = require('./util/customProperty');
 
 /**
  * StyleDictionary custom formats
  * https://amzn.github.io/style-dictionary/formats_and_templates
  */
-
-// load and keep breakpoint values in memory
-// for responsive var value output
-const bpProperties = JSON.parse(
-		fs.readFileSync(
-			path.join(__dirname, '..', 'properties', 'layout', 'breakpoints.json')
-		)
-	);
-
-// get media query string from size keyword
-// (e.g. 's', 'm', 'l')
-const getMQBySize = (size) =>
-	`only screen and (min-width: ${bpProperties.layout.breakpoint[size].value})`;
 
 // generated content warning for top of files
 const dateHeader = () =>
@@ -43,63 +29,18 @@ const commonJS = {
 
 // CSS Custom properties format
 //
-// There is some extra complexity here due to support
-// for responsive custom properties. A "responsive"
-// custom property has a different value at medium
-// and large breakpoints. These properties are assigned
-// a default value in `:root` with overrides scoped
-// to media queries.
-//
-// A "standard" custom property has only one value,
-// and can be assigned in `:root` just once.
-const customProperties = {
+const customPropertiesCSS = {
 	name: 'css/customProperties',
-	formatter: (dictionary) => {
-		const { allProperties } = dictionary;
-		const lineTab = '\n\t';
-		const isResponsiveProp = (p) => p.path.includes('responsive');
-		const toCSSRule = (prop, size) => size ?
-			`${prop.name}: ${prop.value[size]};`
-			: `${prop.name}: ${prop.value};`;
+	formatter: (dictionary) =>
+		dateHeader() + customProperty.getAllCSSRules(dictionary, false)
+};
 
-		return dateHeader() + `
-/* Default values */
-:root {
-	${allProperties
-		.filter(p => !isResponsiveProp(p))
-		.map(p => toCSSRule(p))
-		.join(lineTab)
-	}
-	${allProperties
-		.filter(p => isResponsiveProp(p))
-		.map(p => toCSSRule(p, 'default'))
-		.join(lineTab)
-	}
-}
-
-/* Medium breakpoint overrides */
-@media ${getMQBySize('m')} {
-	:root {
-		${allProperties
-			.filter(p => isResponsiveProp(p))
-			.map(p => toCSSRule(p, 'atMedium'))
-			.join(lineTab + '\t')
-		}
-	}
-}
-
-/* Large breakpoint overrides */
-@media ${getMQBySize('l')} {
-	:root {
-		${allProperties
-			.filter(p => isResponsiveProp(p))
-			.map(p => toCSSRule(p, 'atLarge'))
-			.join(lineTab + '\t')
-		}
-	}
-}
-`
-	}
+// SCSS Module custom properties format
+//
+const customPropertiesCSSModule = {
+	name: 'cssModule/customProperties',
+	formatter: (dictionary) =>
+		dateHeader() + customProperty.getAllCSSRules(dictionary, true)
 };
 
 // Color attributes format (JS)
@@ -165,7 +106,8 @@ const scssVariables = {
 
 module.exports = [
 	commonJS,
-	customProperties,
+	customPropertiesCSS,
+	customPropertiesCSSModule,
 	colorAttributes,
 	scssColorVariables,
 	scssVariables
