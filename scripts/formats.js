@@ -29,10 +29,18 @@ const commonJS = {
 
 // CSS Custom properties format
 //
-const customProperties = {
+const customPropertiesCSS = {
 	name: 'css/customProperties',
 	formatter: (dictionary) =>
 		dateHeader() + customProperty.getAllCSSRules(dictionary, false)
+};
+
+// SCSS Module custom properties format
+//
+const customPropertiesCSSModule = {
+	name: 'cssModule/customProperties',
+	formatter: (dictionary) =>
+		dateHeader() + customProperty.getAllCSSRules(dictionary, true)
 };
 
 // Color attributes format (JS)
@@ -98,7 +106,8 @@ const scssVariables = {
 
 module.exports = [
 	commonJS,
-	customProperties,
+	customPropertiesCSS,
+	customPropertiesCSSModule,
 	colorAttributes,
 	scssColorVariables,
 	scssVariables
