@@ -20,6 +20,9 @@ const bpProperties = JSON.parse(
 const getMQBySize = (size) =>
 	`only screen and (min-width: ${bpProperties.layout.breakpoint[size].value})`;
 
+// checks if dictionary property belongs to responsive category
+const isResponsiveProp = (p) => p.path.includes('responsive');
+
 // generated content warning for top of files
 const dateHeader = () =>
 	  '/**\n' +
@@ -52,12 +55,11 @@ const commonJS = {
 //
 // A "standard" custom property has only one value,
 // and can be assigned in `:root` just once.
-const customProperties = {
+const CSSCustomProperties = {
 	name: 'css/customProperties',
 	formatter: (dictionary) => {
 		const { allProperties } = dictionary;
 		const lineTab = '\n\t';
-		const isResponsiveProp = (p) => p.path.includes('responsive');
 		const toCSSRule = (prop, size) => size ?
 			`${prop.name}: ${prop.value[size]};`
 			: `${prop.name}: ${prop.value};`;
@@ -99,6 +101,23 @@ const customProperties = {
 	}
 }
 `
+	}
+};
+
+// JS Custom properties format
+//
+// Exports an object with custom property names as keys.
+// For responsive properties, we take the "default" value.
+//
+const JSObjectCustomProperties = {
+	name: 'js/customProperties',
+	formatter: (dictionary) => {
+		const objProps = dictionary.allProperties
+			.map(p =>
+				`'${p.name}': '${isResponsiveProp(p) ? p.value['default'] : p.value}',`
+			)
+			.join('\n\t');
+		return dateHeader() + `module.exports = {\n\tcustomProperties: {\n\t${objProps}\n\t}\n}`;
 	}
 };
 
@@ -165,7 +184,8 @@ const scssVariables = {
 
 module.exports = [
 	commonJS,
-	customProperties,
+	CSSCustomProperties,
+	JSObjectCustomProperties,
 	colorAttributes,
 	scssColorVariables,
 	scssVariables
