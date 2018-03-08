@@ -43,7 +43,7 @@
 				}
 			]
 		},
-		"customProperties": {
+		"CSSCustomProperties": {
 			"transforms": [
 				"attribute/cti",
 				"name/cti/customProperty",
@@ -54,6 +54,20 @@
 				{
 					"destination": "css/customProperties.css",
 					"format": "css/customProperties"
+				}
+			]
+		},
+		"JSObjectCustomProperties": {
+			"transforms": [
+				"attribute/cti",
+				"name/cti/customProperty",
+				"color/optimizedRGBA"
+			],
+			"buildPath": "./dist/",
+			"files": [
+				{
+					"destination": "js/customProperties.js",
+					"format": "js/customProperties"
 				}
 			]
 		},
