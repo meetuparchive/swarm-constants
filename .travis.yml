@@ -21,6 +21,7 @@ before_install:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 
 before_script:
+  - yarn run lint
   - yarn run build
 
 after_script:
@@ -40,7 +41,6 @@ after_script:
   - >
     [ "${TRAVIS_BRANCH}" != "master" ] &&
     echo "skipping versioning" ||
-    yarn run lint &&
     npm version $GIT_TAG -m "Version $GIT_TAG built by Travis CI - https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_JOB_ID" &&
     git push --tags git@github.com:$TRAVIS_REPO_SLUG.git &&
     npm publish --tag $NPM_TAG
@@ -49,6 +49,6 @@ deploy:
     provider: pages
     verbose: true
     github_token: $GITHUB_TOKEN
-    local_dir: doc/variableDoc/customProperties/
-    on:
-        branch: master
+    local_dir: doc/customProperties/
+    #on:
+        #branch: master
