@@ -49,6 +49,6 @@ deploy:
     provider: pages
     verbose: true
     github_token: $GITHUB_TOKEN
-    local_dir: doc/variableDoc/customProperties/
+    local_dir: doc/customProperties/
     on:
         branch: master
