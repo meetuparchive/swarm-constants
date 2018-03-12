@@ -2,6 +2,8 @@
 *.swo
 *.log
 
+dist/
 node_modules/
 github_deploy_key
 .DS_Store
+.npmrc
