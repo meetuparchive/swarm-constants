@@ -21,10 +21,10 @@
 				"name/cti/customProperty",
 				"color/optimizedRGBA"
 			],
-			"buildPath": "./dist/",
+			"buildPath": "./doc/",
 			"files": [
 				{
-					"destination": "doc/variableDoc/customProperties/index.html",
+					"destination": "customProperties/index.html",
 					"template": "staticDocs"
 				}
 			]
