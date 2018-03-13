@@ -114,7 +114,7 @@ const JSObjectCustomProperties = {
 	formatter: (dictionary) => {
 		const objProps = dictionary.allProperties
 			.map(p =>
-				`'${p.name}': '${isResponsiveProp(p) ? p.value['default'] : p.value}',`
+				`'${p.name}': '${isResponsiveProp(p) ? p.value['default'] : p.value.replace(/'/g, '\"')}',`
 			)
 			.join('\n\t');
 		return dateHeader() + `module.exports = {\n\tcustomProperties: {\n\t${objProps}\n\t}\n}`;
