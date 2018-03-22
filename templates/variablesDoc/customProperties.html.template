@@ -9,27 +9,9 @@
 			--c-border: rgba(0,0,0,.12);
 		}
 
-		html {
-			font-size: calc(var(--minFontSize)*1px);
-			font-family: 'Graphik', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-			line-height: 1.5;
-		}
-
-		@media (min-width: 400px) {
-		  html {
-			font-size: calc(
-				calc(var(--minFontSize)*1px) +
-				calc((var(--maxFontSize) - var(--minFontSize))) *
-				(100vw - 400px) / (1200 - 400)
-			);
-		  }
-		}
-		@media (min-width: 1200px) {
-		  html {
-			font-size: calc(var(--maxFontSize)*1px);
-		  }
-		}
-
+		/**********************/
+		/* Reset              */
+		/**********************/
 		body {
 			margin: 0;
 		}
@@ -44,6 +26,142 @@
 			padding-bottom: .667rem;
 		}
 
+		/**********************/
+		/* Layout             */
+		/**********************/
+		.bounds {
+			margin: 0 auto;
+			max-width: 1000px;
+			width: 100%;
+		}
+
+		.section {
+			border-bottom: 1px solid var(--c-border);
+			padding: 5vmin 0;
+		}
+
+		.section:last-child {
+			border-bottom: 0;
+		}
+
+		.tableWrapper {
+			flex-grow: 1;
+		}
+
+		@media (min-width: 800px) {
+			.flex {
+				display: flex;
+			}
+		}
+
+		/**********************/
+		/* Typography         */
+		/**********************/
+		html {
+			font-size: calc(var(--minFontSize)*1px);
+			font-family: 'Graphik', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+			line-height: 1.5;
+		}
+
+		@media (min-width: 400px) {
+			html {
+				font-size: calc(
+					calc(var(--minFontSize)*1px) +
+					calc((var(--maxFontSize) - var(--minFontSize))) *
+					(100vw - 400px) / (1200 - 400)
+				);
+			}
+		}
+		@media (min-width: 1200px) {
+			html {
+				font-size: calc(var(--maxFontSize)*1px);
+			}
+		}
+
+		.text--sectionTitle {
+			font-size: 2.25rem;
+			margin: 0;
+			padding: 0 0 1rem 1rem;
+			text-transform: capitalize;
+		}
+
+		@media (min-width: 800px) {
+			.text--sectionTitle {
+				align-self: flex-start;
+				padding: 0 0 3rem 1rem;
+				position: sticky;
+				top: 1rem;
+				transform: rotate(180deg);
+				writing-mode: vertical-rl;
+			}
+		}
+
+		@media (min-width: 1400px) {
+			.text--sectionTitle {
+				padding: 0 0 1rem 1rem;
+			}
+		}
+
+		.text--mono {
+			font-family: Monaco, "Andale Mono", "Courier New", monospace;
+		}
+
+		.link {
+			color: rgb(0, 162, 199);
+		}
+
+		/**********************/
+		/* Navigation         */
+		/**********************/
+		.navigation {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			background-color: white;
+			box-shadow: 0 1px 3px 1px rgba(0,0,0,.05);
+			padding: 1rem;
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+
+		.navigation-list {
+			text-transform: capitalize;
+			margin: 0;
+		}
+
+		.navigation-list li {
+			display: inline-block;
+			padding-bottom: 0;
+			padding-right: .667rem;
+		}
+
+		.navigation-list li:last-child {
+			padding-bottom: 0;
+			padding-right: 0;
+		}
+
+
+		@media (min-width: 1400px) {
+			.navigation {
+				border: 1px solid var(--c-border);
+				border-radius: 8px;
+				box-shadow: none;
+				flex-direction: column;
+				margin: 2rem 1rem;
+				width: auto;
+			}
+
+			.navigation-list li {
+				display: block;
+				padding-right: 0;
+			}
+		}
+
+		/**********************/
+		/* Values table       */
+		/**********************/
 		table {
 			border-collapse: collapse;
 			display: table;
@@ -78,30 +196,14 @@
 			background-color: rgb(246, 247, 248);
 		}
 
-		.bounds {
-			margin: 0 auto;
-			max-width: 1000px;
-			width: 100%;
+		.docsContent {
+			margin-top: 100px;
 		}
 
-		.section {
-			border-bottom: 1px solid var(--c-border);
-			padding: 5vmin 0;
-		}
-
-		.section:last-child {
-			border-bottom: 0;
-		}
-
-		.text--sectionTitle {
-			font-size: 2.25rem;
-			margin: 0;
-			padding: 0 0 1rem 1rem;
-			text-transform: capitalize;
-		}
-
-		.text--mono {
-			font-family: Monaco, "Andale Mono", "Courier New", monospace;
+		@media (min-width: 1400px) {
+			.docsContent {
+				margin-top: 0;
+			}
 		}
 
 		.codeBox {
@@ -117,24 +219,6 @@
 			grid-template-columns: max-content min-content;
 		}
 
-		.tableWrapper {
-			flex-grow: 1;
-		}
-
-		@media (min-width: 800px) {
-			.flex {
-				display: flex;
-			}
-
-			.text--sectionTitle {
-				align-self: flex-start;
-				position: sticky;
-				top: 1rem;
-				transform: rotate(180deg);
-				writing-mode: vertical-rl;
-			}
-		}
-
 	</style>
 </head>
 <body>
@@ -147,42 +231,56 @@
 
 			newObj = acc;
 			return newObj;
-		}, Object.create(null));
+		}, Object.create(null)); %>
 
-		Object.keys(categorizedProperties).map((category) => { %>
-			<section class="section">
-				<div class="bounds"><div class="flex">
-					<div><h2 class="text--sectionTitle"><%= category %></h2></div>
-					<div class="tableWrapper"><table>
-						<thead>
-							<tr>
-								<th>Property name</th>
-								<th>Value</th>
-							</tr>
-						</thead>
-						<tbody>
-							<% _.each(categorizedProperties[category], (property) => {
-								const { name, value } = property; %>
+		<nav class="navigation">
+			<ul class="navigation-list">
+				<% Object.keys(categorizedProperties).map((category) => { %>
+					<li>
+						<a class="link" href="#<%= category %>">
+							<%= category %>
+						</a>
+					</li>
+				<% });%>
+			</ul>
+		</nav>
+
+		<div class="docsContent">
+			<% Object.keys(categorizedProperties).map((category) => { %>
+				<section class="section" id="<%= category %>">
+					<div class="bounds"><div class="flex">
+						<div><h2 class="text--sectionTitle"><%= category %></h2></div>
+						<div class="tableWrapper"><table>
+							<thead>
 								<tr>
-									<td class="text--mono"><%= name %></td>
-									<td>
-										<% if(typeof value === 'object') { %>
-											<div class="responsiveValues">
-												<% Object.keys(value).map((sizeKey) => { %>
-													<span><%= sizeKey %>:</span>
-													<span class="codeBox text--mono"><%= value[sizeKey] %></span>
-												<% }) %>
-											</div>
-										<% } else { %>
-											<span class="codeBox text--mono"><%= value %></span>
-										<% } %>
-									</td>
+									<th>Property name</th>
+									<th>Value</th>
 								</tr>
-							<% }) %>
-						</tbody>
-					</table></div>
-				</div></div>
-			</section>
-		<% });%>
+							</thead>
+							<tbody>
+								<% _.each(categorizedProperties[category], (property) => {
+									const { name, value } = property; %>
+									<tr>
+										<td class="text--mono"><%= name %></td>
+										<td>
+											<% if(typeof value === 'object') { %>
+												<div class="responsiveValues">
+													<% Object.keys(value).map((sizeKey) => { %>
+														<span><%= sizeKey %>:</span>
+														<span class="codeBox text--mono"><%= value[sizeKey] %></span>
+													<% }) %>
+												</div>
+											<% } else { %>
+												<span class="codeBox text--mono"><%= value %></span>
+											<% } %>
+										</td>
+									</tr>
+								<% }) %>
+							</tbody>
+						</table></div>
+					</div></div>
+				</section>
+			<% });%>
+		</div>
 </body>
 </html>
