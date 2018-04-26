@@ -159,6 +159,14 @@
 			}
 		}
 
+		.docsNote {
+			background-color: rgb(246, 247, 248);
+			border-radius: 3px;
+			color: rgba(46, 62, 72, 0.6);
+			font-size: .75rem;
+			padding: .75rem;
+		}
+
 		/**********************/
 		/* Values table       */
 		/**********************/
@@ -191,8 +199,7 @@
 			letter-spacing: calc(1em / 6);
 		}
 
-		tbody tr:nth-child(odd) td,
-		tbody tr:nth-child(odd) th {
+		tbody tr:nth-child(odd) {
 			background-color: rgb(246, 247, 248);
 		}
 
@@ -210,6 +217,13 @@
 			background-color: rgba(41, 77, 107, 0.08);
 			border-radius: 6px;
 			padding: .125rem .25rem;
+		}
+
+		.colorSwatch {
+			border-radius: 3px;
+			display: inline-block;
+			height: 1rem;
+			width: 1rem;
 		}
 
 		.responsiveValues {
@@ -248,37 +262,45 @@
 		<div class="docsContent">
 			<% Object.keys(categorizedProperties).map((category) => { %>
 				<section class="section" id="<%= category %>">
-					<div class="bounds"><div class="flex">
-						<div><h2 class="text--sectionTitle"><%= category %></h2></div>
-						<div class="tableWrapper"><table>
-							<thead>
-								<tr>
-									<th>Property name</th>
-									<th>Value</th>
-								</tr>
-							</thead>
-							<tbody>
-								<% _.each(categorizedProperties[category], (property) => {
-									const { name, value } = property; %>
+					<div class="bounds">
+
+						<div class="docsNote">These values are documented as CSS custom properties. See the <a href="https://meetup.github.io/swarm-design-system/design/color/" class="link">Swarm Design System guidelines site</a> for general-use docs.</div>
+
+						<div class="flex">
+							<div><h2 class="text--sectionTitle"><%= category %></h2></div>
+							<div class="tableWrapper"><table>
+								<thead>
 									<tr>
-										<td class="text--mono"><%= name %></td>
-										<td>
-											<% if(typeof value === 'object') { %>
-												<div class="responsiveValues">
-													<% Object.keys(value).map((sizeKey) => { %>
-														<span><%= sizeKey %>:</span>
-														<span class="codeBox text--mono"><%= value[sizeKey] %></span>
-													<% }) %>
-												</div>
-											<% } else { %>
-												<span class="codeBox text--mono"><%= value %></span>
-											<% } %>
-										</td>
+										<th>Property name</th>
+										<th>Value</th>
 									</tr>
-								<% }) %>
-							</tbody>
-						</table></div>
-					</div></div>
+								</thead>
+								<tbody>
+									<% _.each(categorizedProperties[category], (property) => {
+										const { name, value } = property; %>
+										<tr>
+											<td class="text--mono"><%= name %></td>
+											<td>
+												<% if(typeof value === 'object') { %>
+													<div class="responsiveValues">
+														<% Object.keys(value).map((sizeKey) => { %>
+															<span><%= sizeKey %>:</span>
+															<span class="codeBox text--mono"><%= value[sizeKey] %></span>
+														<% }) %>
+													</div>
+												<% } else { %>
+													<% if(category === 'color') { %>
+														<span class="colorSwatch" style="background-color: <%= value %>;"></span>
+													<% } %>
+													<span class="codeBox text--mono"><%= value %></span>
+												<% } %>
+											</td>
+										</tr>
+									<% }) %>
+								</tbody>
+							</table></div>
+						</div>
+					</div>
 				</section>
 			<% });%>
 		</div>
