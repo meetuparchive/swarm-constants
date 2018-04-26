@@ -1,0 +1,151 @@
+/**
+ * Do not edit directly
+ * Generated on Wed Apr 25 2018 17:35:31 GMT-0400 (EDT)
+ */
+
+
+/* Default values */
+:root {
+	--c-white: rgb(255, 255, 255);
+	--c-lightGray: rgb(246, 247, 248);
+	--c-mediumGray: rgb(117, 117, 117);
+	--c-darkGray: rgb(53, 62, 72);
+	--c-coolGrayLight: rgb(228, 233, 237);
+	--c-coolGrayLightTransp: rgba(41, 77, 107, 0.12);
+	--c-coolGrayMedium: rgb(151, 159, 164);
+	--c-coolGrayMediumTransp: rgba(84, 96, 107, 0.6);
+	--c-red: rgb(241, 58, 89);
+	--c-darkRed: rgb(211, 45, 74);
+	--c-pink: rgb(255, 153, 209);
+	--c-yellow: rgb(255, 229, 51);
+	--c-lightBlue: rgb(77, 209, 237);
+	--c-purple: rgb(55, 30, 172);
+	--c-blue: rgb(0, 162, 199);
+	--c-plum: rgb(112, 0, 176);
+	--c-orange: rgb(255, 91, 15);
+	--c-teal: rgb(0, 212, 128);
+	--c-shamrock: rgb(89, 219, 51);
+	--c-black: rgb(15, 23, 33);
+	--c-facebook: rgb(59, 89, 152);
+	--c-twitter: rgb(51, 204, 255);
+	--c-linkedin: rgb(72, 117, 180);
+	--c-tumblr: rgb(43, 73, 100);
+	--c-flickr: rgb(254, 8, 131);
+	--c-foursquare: rgb(12, 186, 223);
+	--c-googleplus: rgb(198, 61, 45);
+	--c-googleplusbutton: rgb(255, 255, 255);
+	--c-instagram: rgb(78, 67, 60);
+	--c-reddit: rgb(206, 227, 248);
+	--c-wepay: rgb(72, 145, 220);
+	--c-yahoo: rgb(123, 0, 153);
+	--c-outlook: rgb(0, 114, 198);
+	--c-textPrimary: rgb(46, 62, 72);
+	--c-textSecondary: rgba(46, 62, 72, 0.6);
+	--c-textTertiary: rgba(46, 62, 72, 0.35);
+	--c-textHint: rgba(46, 62, 72, 0.35);
+	--c-textDisabled: rgba(46, 62, 72, 0.12);
+	--c-textPrimaryInverted: rgb(255, 255, 255);
+	--c-textSecondaryInverted: rgba(255, 255, 255, 0.7);
+	--c-textTertiaryInverted: rgba(255, 255, 255, 0.35);
+	--c-textHintInverted: rgba(255, 255, 255, 0.35);
+	--c-textDisabledInverted: rgba(255, 255, 255, 0.12);
+	--c-attention: rgb(255, 91, 15);
+	--c-success: rgb(0, 212, 128);
+	--c-border: rgba(46, 62, 72, 0.12);
+	--c-borderDark: rgba(46, 62, 72, 0.54);
+	--c-borderInverted: rgba(255, 255, 255, 0.2);
+	--c-borderDarkInverted: rgba(255, 255, 255, 0.7);
+	--c-separator: rgba(46, 62, 72, 0.26);
+	--c-highlight: rgba(0, 0, 255, 0.05);
+	--c-selection: rgba(46, 62, 72, 0.05);
+	--c-dimmingOverlay: rgba(46, 62, 72, 0.4);
+	--c-tappable: rgba(56, 56, 15, 0.09);
+	--c-tappableInverted: rgba(255, 246, 196, 0.27);
+	--c-contentBG: rgb(255, 255, 255);
+	--c-contentBGInverted: rgb(15, 23, 33);
+	--c-collectionBG: rgb(246, 247, 248);
+	--font-family-normal: 'Graphik Meetup', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+	--font-family-mono: Monaco, 'Andale Mono', 'Courier New', monospace;
+	--font-lineHeight-normal: 1.45;
+	--font-lineHeight-largeText: 1.1;
+	--font-lineHeight-smallText: 1.6;
+	--font-lineHeight-runningText: 1.8;
+	--font-size-tiny: 12px;
+	--font-size-small: 14px;
+	--font-size-normal: 16px;
+	--font-size-big: 24px;
+	--font-size-display3: 28px;
+	--font-size-display2: 34px;
+	--font-size-display1: 42px;
+	--font-size-title: 32px;
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 600;
+	--block-1: 48px;
+	--block-2: 72px;
+	--block-3: 108px;
+	--block-4: 160px;
+	--block-5: 240px;
+	--block-6: 384px;
+	--block-7: 544px;
+	--breakpoint-s: 440px;
+	--breakpoint-m: 640px;
+	--breakpoint-l: 840px;
+	--breakpoint-xl: 1024px;
+	--radius-small: 2px;
+	--radius-normal: 4px;
+	--radius-large: 8px;
+	--space-1: 16px;
+	--space-2: 24px;
+	--space-3: 36px;
+	--space-4: 56px;
+	--space-5: 80px;
+	--space-6: 120px;
+	--space-7: 184px;
+	--space-8: 280px;
+	--space-half: 8px;
+	--space-double: 32px;
+	--space-quarter: 4px;
+	--width-modal: 440px;
+	--width-bounds: 840px;
+	--width-bounds-wide: 1100px;
+	--zindex-main: 0;
+	--zindex-floatingContent: 10;
+	--zindex-shade: 20;
+	--zindex-shadeContent: 25;
+	--zindex-modal: 30;
+	--zindex-popup: 50;
+	--media-xs: 16px;
+	--media-s: 24px;
+	--media-m: 36px;
+	--media-l: 48px;
+	--media-xl: 72px;
+	--media-xxl: 120px;
+	--responsive-space: 16px;
+}
+
+/* Medium breakpoint overrides */
+@media only screen and (min-width: 640px) {
+	:root {
+		--media-xs: 18px;
+		--media-s: 27px;
+		--media-m: 40px;
+		--media-l: 54px;
+		--media-xl: 81px;
+		--media-xxl: 135px;
+		--responsive-space: 18px;
+	}
+}
+
+/* Large breakpoint overrides */
+@media only screen and (min-width: 840px) {
+	:root {
+		--media-xs: 20px;
+		--media-s: 30px;
+		--media-m: 45px;
+		--media-l: 60px;
+		--media-xl: 90px;
+		--media-xxl: 150px;
+		--responsive-space: 20px;
+	}
+}
