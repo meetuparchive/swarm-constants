@@ -7,6 +7,7 @@
 			--minFontSize: 16;
 			--maxFontSize: 22;
 			--c-border: rgba(0,0,0,.12);
+			--lineHeight: 1.5;
 		}
 
 		/**********************/
@@ -54,13 +55,17 @@
 			}
 		}
 
+		.sectionTitleWrapper {
+			min-width: calc((2.25rem * var(--lineHeight)) + 1rem);
+		}
+
 		/**********************/
 		/* Typography         */
 		/**********************/
 		html {
 			font-size: calc(var(--minFontSize)*1px);
 			font-family: 'Graphik', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-			line-height: 1.5;
+			line-height: var(--lineHeight);
 		}
 
 		@media (min-width: 400px) {
@@ -267,7 +272,7 @@
 						<div class="docsNote">These values are documented as CSS custom properties. See the <a href="https://meetup.github.io/swarm-design-system/design/color/" class="link">Swarm Design System guidelines site</a> for general-use docs.</div>
 
 						<div class="flex">
-							<div><h2 class="text--sectionTitle"><%= category %></h2></div>
+							<div class="sectionTitleWrapper"><h2 class="text--sectionTitle"><%= category %></h2></div>
 							<div class="tableWrapper"><table>
 								<thead>
 									<tr>
