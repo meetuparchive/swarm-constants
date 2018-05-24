@@ -11,6 +11,9 @@
 			"normal": {
 				"value": "16px"
 			},
+			"sectionTitle": {
+				"value": "20px"
+			},
 			"big": {
 				"value": "24px"
 			},
