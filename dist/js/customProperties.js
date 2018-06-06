@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon May 07 2018 16:36:21 GMT-0400 (EDT)
+ * Generated on Wed Jun 06 2018 10:46:01 GMT-0400 (EDT)
  */
 
 module.exports = {
@@ -72,6 +72,7 @@ module.exports = {
 	'--font-size-tiny': '12px',
 	'--font-size-small': '14px',
 	'--font-size-normal': '16px',
+	'--font-size-sectionTitle': '20px',
 	'--font-size-big': '24px',
 	'--font-size-display3': '28px',
 	'--font-size-display2': '34px',
