@@ -2,6 +2,7 @@
 *.swo
 *.log
 
+dist/
 .npmrc
 node_modules/
 github_deploy_key
