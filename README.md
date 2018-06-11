@@ -42,10 +42,3 @@ Command              | Result
 -------------------- | -----------------------------
 `yarn run build`     | Compiles distributions
 
-### Release notes
- #### v1.2.X
- `buttonBG`, and all variants of `fieldBG` have been removed after the design team re-styled form inputs and buttons. You can use `coolGrayLightTransp` in place of `buttonBG`, but there's no replacement for `fieldBG` or its variants.
-
-### TODO
-- iOS distribution
-
