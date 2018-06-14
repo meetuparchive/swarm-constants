@@ -11,16 +11,11 @@ using [`style-dictionary`](https://amzn.github.io/style-dictionary/);
 ## Documentation
 Documentation is generated from `properties/` and published on github pages:
 
-- [Colors](https://meetup.github.io/swarm-constants/)
-- more to come...
+- [CSS Custom Properties](https://meetup.github.io/swarm-constants/)
+- More TK
 
 ## Using `swarm-constants` in your application
 See the `dist/` directory for platfrom-specific distributions.
-
-#### Currently supported distributions
-- static docs
-- android (colors)
-- scss
 
 ## Development
 
@@ -35,8 +30,6 @@ file to configure distributions. You can use one of the [`built in formats`](htt
 provided by `style-dictionary`, or you can register your own format.
 
 ### Scripts
-We commit our distributions to make it easier for consumers to import design constants.
-To regenerate distributions, use command `yarn run build`.
 
 Command              | Result
 -------------------- | -----------------------------
