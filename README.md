@@ -32,7 +32,7 @@ and follows conventions of [`style-dictionary`](https://amzn.github.io/style-dic
 ## Overview
 This project follows these steps to create distributions:
 
-0. Read all JSON files in [`properties/`](https://github.com/meetup/swarm-constants/tree/master/properties)
+0. Read all JSON files in [`properties/`](https://github.com/meetup/swarm-constants/tree/master/properties). The properties defined in these files are known as "style properties".
 1. `style-dictionary` transforms keys and properties from JSON into an intermediate
    format, a plain JS object referred to as "dictionary".
 2. `style-dictionary` then can generate distributions from the "dictionary" object based on formats/templates specified in `config.json`
@@ -201,9 +201,3 @@ CSS custom properties.
 $C_white: rgb(255, 255, 255);
 $space-1: 16px;
 ```
-
-## Custom style properties
-[_Style properties_](https://amzn.github.io/style-dictionary/#/README?id=style-properties) refer to the JSON definitions in the [`properties/`](https://github.com/meetup/swarm-constants/tree/master/properties)
-directory. We use a few custom style properties in `swarm-constants` to meet our
-responsive and color needs:
-
