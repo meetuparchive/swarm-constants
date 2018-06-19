@@ -123,6 +123,85 @@ A [_format_](https://amzn.github.io/style-dictionary/#/formats) is essentially a
 template to control the formatting of output for a given distribution. `swarm-constants`
 uses a few custom formats that are not defined in `style-dictionary`:
 
+### `javascript/commonJS`
+Creates a JS file exporing all color values (using commonJS modules).
+
+**Example**
+```js
+exports.C_WHITE = 'rgb(255, 255, 255)';
+exports.C_LIGHTGRAY = 'rgb(246, 247, 248)';
+exports.C_MEDIUMGRAY = 'rgb(117, 117, 117)';
+```
+
+### `css/customProperties`
+Creates a file containing valid CSS custom property definitions.
+
+**Example**
+```js
+:root {
+	--c-white: rgb(255, 255, 255);
+	--c-lightGray: rgb(246, 247, 248);
+	--c-mediumGray: rgb(117, 117, 117);
+	...
+```
+
+### `js/JSObjectCustomProperties`
+Creates a JS file that exports an object with CSS custom property names as keys, and style
+property values as values. This is used to populate our PostCSS loader with fallback
+values for custom properties in style modules.
+
+**Example**
+```js
+customProperties: {
+	'--c-white': 'rgb(255, 255, 255)',
+	'--c-lightGray': 'rgb(246, 247, 248)',
+	'--c-mediumGray': 'rgb(117, 117, 117)',
+	...
+}
+```
+
+### `javascript/colorAttributes`
+Creates a JS file that exports a list of objects containing meta info for each color
+property. This is used for generating documentation.
+
+**Example**
+```js
+   {
+      "name": "white",
+      "type": "base",
+      "colorValues": {
+         "rgba": "rgb(255, 255, 255)",
+         "hex": "#ffffff",
+         "hsv": "hsv(0, 0%, 100%)",
+         "hsl": "hsl(0, 0%, 100%)",
+         "androidHex8": "#ffffffff"
+      },
+      "colorVarNames": {
+         "android": "color_base_white",
+         "sass": "$C_white",
+         "js": "C_WHITE",
+         "customProperty": "var(--c-white)"
+      },
+      "originalValue": [
+         255,
+         255,
+         255,
+         1
+      ]
+   }
+```
+
+### `scss/variablesCustom`
+Formats Sass variables, following our naming conventions.
+Does not include style properties in the `responsive` category, as those are handled by
+CSS custom properties.
+
+**Example**
+```scss
+$C_white: rgb(255, 255, 255);
+$space-1: 16px;
+```
+
 ## Custom style properties
 [_Style properties_](https://amzn.github.io/style-dictionary/#/README?id=style-properties) refer to the JSON definitions in the [`properties/`](https://github.com/meetup/swarm-constants/tree/master/properties)
 directory. We use a few custom style properties in `swarm-constants` to meet our
