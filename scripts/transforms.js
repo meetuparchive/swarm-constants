@@ -3,43 +3,63 @@ const getRgbaString = require('./util/getRgbaString');
 const SD_transforms = require('../node_modules/style-dictionary/lib/common/transforms');
 
 /**
- * @function getNameWithWebConvention
- * Name transform helper for SCSS and CSS
- *
+ * Gets object of prop names based on different patterns
+ * 
  * @param {Object} prop - the dictionary property
- * @param {String} colorPrefix - string to prefix color names (e.g. "C_" or "c-")
- * @param {String} delimiter - delimiter for name parts
- *
- * @returns {String} - property name following web (scss, css) conventions
+ * @param {Object} opts - options
+ * @returns {Object} - calculated prop names by convention key
  */
-const getNameWithWebConvention = (prop, delimiter, colorPrefix) => {
+const getPropNamePatterns = (prop, opts) => {
 	const {
 		category,
 		type,
 		item,
 	} = prop.attributes;
 
-	const patterns = {
+	const {
+		colorPrefix,
+		delimiter,
+		textDelimiter,
+	} = opts;
+
+	return {
 		color: `${colorPrefix}${item}`,
-		textColor: `${colorPrefix}text${capitalizeFirstLetter(item)}`,
-		CTI: `${category}-${type}-${item}`,
-		TI: `${type}-${item}`,
-		CT: `${category}-${type}`,
-	};
+		textColor: `${colorPrefix}text${textDelimiter}${capitalizeFirstLetter(item)}`,
+		CTI: `${category}${delimiter}${type}${delimiter}${item}`,
+		TI: `${type}${delimiter}${item}`,
+		CT: `${category}${delimiter}${type}`,
+	}
+}
+
+
+/**
+ * @function getNameWithWebConvention
+ * Name transform helper
+ *
+ * @param {Object} prop - the dictionary property
+ * @param {Object} namePatterns - object containing prop names using different conventions/patterns
+ *
+ * @returns {String} - property name following web (scss, css) conventions
+ */ 
+const getNameWithWebConvention = (prop, namePatterns) => {
+	const {
+		category,
+		type,
+	} = prop.attributes;
 
 	let name;
 	switch(category) {
 		case 'color':
-			name = (type === 'text') ? patterns.textColor : patterns.color
+			name = (type === 'text') ? namePatterns.textColor : namePatterns.color
 			break;
 		case 'layout':
-			name = patterns.TI;
+			name = namePatterns.TI;
 			break;
 		case 'responsive':
-			name = (type === 'media') ? patterns.TI : patterns.CT;
+			name = (type === 'media') ? namePatterns.TI : namePatterns.CT;
 			break;
 		default:
-			name = patterns.CTI;
+			name = namePatterns.CTI;
 	}
 
 	return name;
@@ -98,7 +118,18 @@ const androidHex8 = {
 const customProperty = {
 	name: 'name/cti/customProperty',
 	type: 'name',
-	transformer: (prop, options) => `--${getNameWithWebConvention(prop, '-', 'c-')}`
+	transformer: (prop, options) => {
+		const customPropertyName = getNameWithWebConvention(
+			prop, 
+			getPropNamePatterns(prop, {
+				colorPrefix: 'c-',
+				delimiter: '-',
+				textDelimiter: '',
+			})
+		);
+
+		return `--${customPropertyName}`;
+	}
 };
 
 
@@ -109,20 +140,42 @@ const customProperty = {
 const scssVar = {
 	name: 'name/cti/scssVar',
 	type: 'name',
-	transformer: (prop, options) => getNameWithWebConvention(prop, '-', 'C_')
+	transformer: (prop, options) => 
+		getNameWithWebConvention(
+			prop,
+			getPropNamePatterns(prop, {
+				colorPrefix: 'C_',
+				delimiter: '-',
+				textDelimiter: '',
+			})
+		)
 };
 
 //
 // Name transform
 // converts "cti" object structure to valid js var `C_COLOR_NAME`
+// 
+// ignores responsive properties
 //
 const jsConstant = {
 	name: 'name/cti/jsConstant',
 	type: 'name',
-	matcher: prop => prop.attributes.category === 'color',
-	transformer: (prop, options) => prop.attributes.type === 'text' ?
-		`C_TEXT_${prop.path.pop().toUpperCase()}`
-		: `C_${prop.path.pop().toUpperCase().replace(/\-+/, '_')}`
+	transformer: (prop) => {
+		const propNames = getPropNamePatterns(prop, {
+			colorPrefix: 'C_',
+			delimiter: '_',
+			textDelimiter: '_',
+		});
+
+		// JS constants should be all upper case
+		Object.keys(propNames)
+			.forEach(k => propNames[k] = propNames[k].toUpperCase());
+
+		console.dir(propNames);
+
+		return getNameWithWebConvention(prop, propNames);
+	}
+		
 };
 
 //
