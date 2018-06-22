@@ -32,14 +32,14 @@ const dateHeader = () =>
 
 
 // commonJS module format
-// (!) "color" category only
+// (!) ignores responsive properties
 //
 // adds every dictionary property to exports
 const commonJS = {
 	name: 'javascript/commonJS',
 	formatter: (dictionary) => dateHeader() + dictionary
 		.allProperties
-		.filter(prop => prop.attributes.category === "color")
+		.filter(prop => prop.attributes.category !== 'responsive')
 		.map(prop => `exports.${prop.name} = '${prop.value}';`)
 		.join('\n')
 };
