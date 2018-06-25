@@ -29,7 +29,7 @@
 				}
 			]
 		},
-		"jsColors": {
+		"jsConstants": {
 			"transforms": [
 				"attribute/cti",
 				"name/cti/jsConstant",
@@ -38,7 +38,7 @@
 			"buildPath": "./dist/",
 			"files": [
 				{
-					"destination": "js/colorConstants.js",
+					"destination": "js/constants.js",
 					"format": "javascript/commonJS"
 				}
 			]
