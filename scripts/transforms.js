@@ -109,6 +109,18 @@ const androidHex8 = {
 };
 
 
+//
+// Font name transform for JS
+// converts values in the `font` category that contain single quotes to use double quotes
+//
+const fontNameJS = {
+	name: 'value/fontNameJS',
+	type: 'value',
+	matcher: prop => prop.attributes.category === 'font',
+	transformer: (prop, options) => {
+		return prop.original.value.replace(/'/g,'\"');
+	}
+};
 
 
 //
@@ -167,11 +179,9 @@ const jsConstant = {
 			textDelimiter: '_',
 		});
 
-		// JS constants should be all upper case
+		// JS constants should be all upper case with an underscore separator
 		Object.keys(propNames)
-			.forEach(k => propNames[k] = propNames[k].toUpperCase());
-
-		console.dir(propNames);
+			.forEach(k => propNames[k] = propNames[k].toUpperCase().replace(/-/g, '_'));
 
 		return getNameWithWebConvention(prop, propNames);
 	}
@@ -228,6 +238,7 @@ const colorVarNames = {
 module.exports = [
 	optimizedRGBA,
 	androidHex8,
+	fontNameJS,
 	customProperty,
 	scssVar,
 	jsConstant,
