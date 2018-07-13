@@ -33,7 +33,8 @@
 			"transforms": [
 				"attribute/cti",
 				"name/cti/jsConstant",
-				"color/optimizedRGBA"
+				"color/optimizedRGBA",
+				"value/fontNameJS"
 			],
 			"buildPath": "./dist/",
 			"files": [

@@ -109,6 +109,18 @@ const androidHex8 = {
 };
 
 
+//
+// Color transform
+// converts color to optimized rgb/rgba
+//
+const fontNameJS = {
+	name: 'value/fontNameJS',
+	matcher: prop => prop.attributes.category === 'font',
+	type: 'value',
+	transformer: (prop, options) => {
+		return prop.original.value.replace(/'/g,'\"');
+	}
+};
 
 
 //
@@ -169,9 +181,9 @@ const jsConstant = {
 
 		// JS constants should be all upper case
 		Object.keys(propNames)
-			.forEach(k => propNames[k] = propNames[k].toUpperCase());
+			.forEach(k => propNames[k] = propNames[k].toUpperCase().replace(/-/g, '_'));
 
-		console.dir(propNames);
+		// console.dir(propNames);
 
 		return getNameWithWebConvention(prop, propNames);
 	}
@@ -228,6 +240,7 @@ const colorVarNames = {
 module.exports = [
 	optimizedRGBA,
 	androidHex8,
+	fontNameJS,
 	customProperty,
 	scssVar,
 	jsConstant,
