@@ -179,7 +179,7 @@ const jsConstant = {
 			textDelimiter: '_',
 		});
 
-		// JS constants should be all upper case
+		// JS constants should be all upper case with an underscore separator
 		Object.keys(propNames)
 			.forEach(k => propNames[k] = propNames[k].toUpperCase().replace(/-/g, '_'));
 
