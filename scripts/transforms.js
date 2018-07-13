@@ -110,13 +110,13 @@ const androidHex8 = {
 
 
 //
-// Color transform
-// converts color to optimized rgb/rgba
+// Font name transform for JS
+// converts values in the `font` category that contain single quotes to use double quotes
 //
 const fontNameJS = {
 	name: 'value/fontNameJS',
-	matcher: prop => prop.attributes.category === 'font',
 	type: 'value',
+	matcher: prop => prop.attributes.category === 'font',
 	transformer: (prop, options) => {
 		return prop.original.value.replace(/'/g,'\"');
 	}
@@ -182,8 +182,6 @@ const jsConstant = {
 		// JS constants should be all upper case
 		Object.keys(propNames)
 			.forEach(k => propNames[k] = propNames[k].toUpperCase().replace(/-/g, '_'));
-
-		// console.dir(propNames);
 
 		return getNameWithWebConvention(prop, propNames);
 	}
