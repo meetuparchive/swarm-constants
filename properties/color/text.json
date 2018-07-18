@@ -37,6 +37,9 @@
 			},
 			"redInverted": {
 				"value":  [241, 58, 89, 1]
+			},
+			"blueInverted": {
+				"value":  [0, 162, 199, 1]
 			}
 
 		}
