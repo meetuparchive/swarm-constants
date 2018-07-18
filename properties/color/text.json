@@ -3,19 +3,19 @@
 		"text": {
 
 			"primary": {
-				"value": [46, 62, 72, 1]
+				"value": [0, 22, 36, 1]
 			},
 			"secondary": {
-				"value": [46, 62, 72, 0.60]
+				"value": [0, 22, 36, 0.6]
 			},
 			"tertiary": {
-				"value": [46, 62, 72, 0.35]
+				"value": [0, 22, 36, 0.38]
 			},
 			"hint": {
-				"value": [46, 62, 72, 0.35]
+				"value": [0, 22, 36, 0.38]
 			},
 			"disabled": {
-				"value": [46, 62, 72, 0.12]
+				"value": [0, 22, 36, 0.12]
 			},
 			"primaryInverted": {
 				"value": [255, 255, 255, 1]
@@ -31,6 +31,15 @@
 			},
 			"disabledInverted": {
 				"value": [255, 255, 255, 0.12]
+			},
+			"red": {
+				"value": [219, 43, 79, 1]
+			},
+			"redInverted": {
+				"value":  [241, 58, 89, 1]
+			},
+			"blueInverted": {
+				"value":  [0, 162, 199, 1]
 			}
 
 		}
