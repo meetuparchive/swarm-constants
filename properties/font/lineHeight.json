@@ -4,11 +4,14 @@
       "tiny": {
         "value": "18px"
       },
-      "small": {
+      "smallText": {
         "value": "20px"
       },
       "normal": {
         "value": "24px"
+      },
+      "largeText": {
+        "value": "52"
       },
       "sectionTitle": {
         "value": "28px"
