@@ -1,20 +1,33 @@
 {
-	"font": {
-		"lineHeight": {
-
-			"normal": {
-				"value": "1.45"
-			},
-			"largeText": {
-				"value": "1.1"
-			},
-			"smallText": {
-				"value": "1.6"
-			},
-			"runningText": {
-				"value": "1.8"
-			}
-
-		}
-	}
+  "font": {
+    "lineHeight": {
+      "tiny": {
+        "value": "18px"
+      },
+      "smallText": {
+        "value": "20px"
+      },
+      "normal": {
+        "value": "24px"
+      },
+      "largeText": {
+        "value": "52"
+      },
+      "sectionTitle": {
+        "value": "28px"
+      },
+      "kicker": {
+        "value": "22px"
+      },
+      "display3": {
+        "value": "36px"
+      },
+      "display2": {
+        "value": "38px"
+      },
+      "display1": {
+        "value": "52px"
+      }
+    }
+  }
 }
