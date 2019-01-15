@@ -5,7 +5,7 @@
 			"1": {
 				"value": {
 					"default" : "16px",
-					"atMedium": "18px",
+					"atMedium": "20px",
 					"atLarge" : "20px"
 				}
 			}
